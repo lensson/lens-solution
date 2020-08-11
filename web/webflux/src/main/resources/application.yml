@@ -3,11 +3,20 @@ server:
   
 spring:
   datasource:
+    url: jdbc:mysql://localhost:30033/webflux?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
-  
+    password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     properties:
       hibernate:
         hbm2ddl:
-          auto: create  
+          auto: create-drop  
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+    show-sql: true    
+
+com:
+  neo:
+    title: \u7EAF\u6D01\u7684\u5FAE\u7B11
+    description: \u5206\u4EAB\u751F\u6D3B\u548C\u6280\u672F    
