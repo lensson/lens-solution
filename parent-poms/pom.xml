@@ -10,20 +10,22 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>tk.lens.solution</groupId>
+	<groupId>tk.lens</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>${project.version}</version>
 	<name>parent</name>
 	<url>http://lensson.tk</url>
 
 	<properties>
+
 		<!-- General Configurations -->
+		<project.version>1.0.0-SNAPSHOT</project.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		
-		
+		<spring-boot-bom-r2dbc.version>0.1.0.M3</spring-boot-bom-r2dbc.version>
 		<!-- Third-party Library Versions -->
 		<junit.version>4.12</junit.version>
 
@@ -34,6 +36,15 @@
 	</build>
 	<dependencyManagement>
 		<dependencies>
+		
+          <dependency>
+                <groupId>org.springframework.boot.experimental</groupId>
+                <artifactId>spring-boot-bom-r2dbc</artifactId>
+                <version>${spring-boot-bom-r2dbc.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            		
 			<!-- Testing Scope -->
 			<dependency>
 				<groupId>junit</groupId>
