@@ -2,6 +2,7 @@ server:
   port: 9010
 
 
+
 spring:
   banner:
     location: banner.txt
@@ -11,7 +12,8 @@ spring:
     url: jdbc:mysql://localhost:33306/plumemo?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: plumemo
     password: plumemo
-    driver-class-name: com.mysql.jdbc.Driver
+#    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
 logging:
   level:
     com.lens: debug
