@@ -6,20 +6,22 @@
     <packaging>pom</packaging>
     <groupId>com.lens</groupId>
     <artifactId>lens-solution</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
 
 
     <properties>
 
         <versions.maven.plugin>2.8</versions.maven.plugin>
-
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
     </properties>
 
     <modules>
 
-
-        <module>wx/server</module>
+        <module>nacos</module>
+        <module>wx/gzhserver</module>
 
     </modules>
 
