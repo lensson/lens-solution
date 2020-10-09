@@ -19,4 +19,4 @@
 # all flattened pom files
 **/.flattened-pom.xml
 dependency-reduced-pom.xml
-
+**/.mvn/*
