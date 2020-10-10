@@ -5,16 +5,24 @@ spring:
         locator:      #路由访问方式：http://Gateway_HOST:Gateway_PORT/大写的serviceId，其中微服务应用名默认大写访问。
           enabled: true
         lowerCaseServiceId: true #使用小写的serviceId,同时一定要配置StripPrefix=1
-      routes:
-        - id: sc-gateway-server
-          uri: lb://sc-gateway-server
-          predicates:
-            - Path=/v1/gateway/**
-          filters:
-            - StripPrefix=2
-        - id: gzh-server
-          uri: lb://gzh-server
-          predicates:
-            - Path=/v1/wx/gzhserver/**
-          filters:
-            - StripPrefix=3
+gateway:
+  routes:
+    nacos:
+      namespace: public
+      dataId: sc-routes
+      group: DEFAULT_GROUP
+
+
+#      routes:
+#        - id: sc-gateway-server
+#          uri: lb://sc-gateway-server
+#          predicates:
+#            - Path=/v1/gateway/**
+#          filters:
+#            - StripPrefix=2
+#        - id: gzh-server
+#          uri: lb://gzh-server
+#          predicates:
+#            - Path=/v1/wx/gzhserver/**
+#          filters:
+#            - StripPrefix=3
