@@ -1,15 +1,17 @@
-server.port: 8849
+server:
+  port: 9002
 
----
 spring:
   profiles:
     active: prod
+
+
 
 ---
 
 spring:
   application:
-    name: sc-gateway-server
+    name: gzh-server
   cloud:
     nacos:
       discovery:
@@ -25,7 +27,7 @@ spring:
 
 spring:
   application:
-    name: sc-gateway-server
+    name: gzh-server
   cloud:
     nacos:
       discovery:
