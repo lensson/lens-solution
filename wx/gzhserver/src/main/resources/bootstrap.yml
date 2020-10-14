@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: prod
+    active: dev
 
 
 
@@ -11,7 +11,7 @@ spring:
 
 spring:
   application:
-    name: gzh-server
+    name: gzhserver
   cloud:
     nacos:
       discovery:
@@ -27,7 +27,7 @@ spring:
 
 spring:
   application:
-    name: gzh-server
+    name: gzhserver
   cloud:
     nacos:
       discovery:
