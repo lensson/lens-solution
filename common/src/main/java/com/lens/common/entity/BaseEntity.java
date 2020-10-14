@@ -13,23 +13,23 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.lens.platform.common.entity;
+package com.lens.common.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
-
+import java.util.Date;
 
 
 @Data
-public class SuperEntity implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+public class BaseEntity extends SuperEntity {
 
     /**
 	 * serialVersionUID
 	 */
-	private static final long serialVersionUID = -4801865210961587582L;
-	
-	private Long id;
-    private Boolean deleted;
+	private static final long serialVersionUID = 199327361052220940L;
+	private Boolean deleted;
+    private Date createTime;
 
 }

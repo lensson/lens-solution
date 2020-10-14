@@ -1,13 +1,9 @@
 package com.lens.platform.security.controller;
 
 
-import com.lens.platform.security.entity.User;
-import com.lens.platform.security.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -21,12 +17,5 @@ import java.util.List;
 @RequestMapping("/security/user")
 public class UserController {
 
-    @Autowired
-    IUserService userService;
-
-
-    public List<User> list(){
-        return userService.list();
-    }
 }
 

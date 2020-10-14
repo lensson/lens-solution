@@ -2,10 +2,46 @@
 server:
   port: 9003
 
+wx:
+  mp:
+    useRedis: false
+    redisConfig:
+      host: 127.0.0.1
+      port: 6379
+    configs:
+      - appId: 1111 # 第一个公众号的appid
+        secret: 1111 # 公众号的appsecret
+        token: 111 # 接口配置里的Token值
+        aesKey: 111 # 接口配置里的EncodingAESKey值
+      - appId: 2222 # 第二个公众号的appid，以下同上
+        secret: 1111
+        token: 111
+        aesKey: 111
+
 spring:
   profiles:
     active: dev
+  datasource:
+    name: mariadb
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:33306/platform?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: lens
+    password: lens
 
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*/*.xml
+  typeAliasesPackage: com.lens.wx.gzh.*.mapper
+  global-config:
+    db-config:
+      #数据库大写下划线转换
+      capital-mode: false
+      #删除
+      logic-delete-value: 1
+      #不删除
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
 
 
 ---
@@ -39,3 +75,4 @@ spring:
         server-addr: 127.0.0.1:8848
         file-extension: yml
   profiles: dev
+

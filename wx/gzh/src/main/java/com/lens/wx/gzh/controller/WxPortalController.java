@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/wx/portal/{appid}")
 public class WxPortalController {
+
     private final WxMpService wxService;
+
     private final WxMpMessageRouter messageRouter;
 
     @GetMapping(produces = "text/plain;charset=utf-8")

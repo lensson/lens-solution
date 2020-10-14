@@ -9,6 +9,7 @@ import me.chanjar.weixin.mp.api.WxMpMessageHandler;
  * @author Lens Chen
  * @created 2020-10-13 2:25 PM
  */
+
 @Slf4j
 public abstract class AbstractHandler implements WxMpMessageHandler {
 
