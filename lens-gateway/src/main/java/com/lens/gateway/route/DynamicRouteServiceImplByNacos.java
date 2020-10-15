@@ -9,15 +9,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.route.RouteDefinition;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.Executor;
 
 @Slf4j
-@Component
+//@Component
 public class DynamicRouteServiceImplByNacos {
 
     @Value("${spring.cloud.nacos.discovery.server-addr:127.0.0.1:8848}")
@@ -42,7 +40,7 @@ public class DynamicRouteServiceImplByNacos {
     /**
      * 监听Nacos Server下发的动态路由配置
      */
-    @PostConstruct
+//    @PostConstruct
     public void dynamicRouteByNacosListener (){
         try {
             Properties configServerProp = new Properties();
