@@ -9,14 +9,11 @@ wx:
       host: 127.0.0.1
       port: 6379
     configs:
-      - appId: 1111 # 第一个公众号的appid
-        secret: 1111 # 公众号的appsecret
-        token: 111 # 接口配置里的Token值
-        aesKey: 111 # 接口配置里的EncodingAESKey值
-      - appId: 2222 # 第二个公众号的appid，以下同上
-        secret: 1111
-        token: 111
-        aesKey: 111
+      - appId: wx7d04a3bd2e01fc0b # 第一个公众号的appid
+        secret: 3e5f2cf222fa05ccb90bc2871fdd9d25 # 公众号的appsecret
+        token: lenssontoken # 接口配置里的Token值
+        aesKey: YxhTzyQQLWIhEf5JCmeIqJkaZ9yMspocsRxryC5D6Lt # 接口配置里的EncodingAESKey值
+
 
 spring:
   profiles:
