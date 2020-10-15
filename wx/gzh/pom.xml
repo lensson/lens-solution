@@ -24,7 +24,7 @@
 
         <dependency>
             <groupId>com.lens</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>lens-common-core</artifactId>
             <version>${project.version}</version>
         </dependency>
 

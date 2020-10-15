@@ -67,11 +67,14 @@
     </properties>
 
     <modules>
+        <!-- common first -->
+        <module>lens-common</module>
 
         <module>nacos</module>
-        <module>gateway</module>
+        <module>lens-gateway</module>
 
-        <module>common</module>
+
+
         <module>platform</module>
         <module>wx/gzh</module>
 

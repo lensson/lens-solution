@@ -1,6 +1,6 @@
 package com.lens.platform.security.entity;
 
-import com.lens.common.entity.BaseEntity;
+import com.lens.common.core.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

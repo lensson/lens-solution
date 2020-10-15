@@ -1,10 +1,9 @@
 package com.lens.wx.gzh.autoreply.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lens.wx.gzh.autoreply.entity.AutoReply;
 import com.lens.wx.gzh.autoreply.mapper.AutoReplyMapper;
 import com.lens.wx.gzh.autoreply.service.IAutoReplyService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,6 +17,5 @@ import org.springframework.stereotype.Service;
 @Service
 public class AutoReplyServiceImpl extends ServiceImpl<AutoReplyMapper, AutoReply> implements IAutoReplyService {
 
-    @Autowired
-    AutoReplyMapper autoReplyMapper;
+
 }

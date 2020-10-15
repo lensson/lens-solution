@@ -21,8 +21,8 @@
     <dependencies>
         <dependency>
             <groupId>com.lens</groupId>
-            <artifactId>common</artifactId>
-            <version>${project.version}</version>
+            <artifactId>lens-common-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <!--常用工具类 -->
