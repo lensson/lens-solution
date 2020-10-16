@@ -21,7 +21,19 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-common-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
+        <!--
+        <dependency>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-common-redis</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -77,7 +89,6 @@
         </dependency>
 
         <!-- Spring Security -->
-        <!--
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
@@ -90,7 +101,7 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-oauth2-jose</artifactId>
         </dependency>
-        -->
+
     </dependencies>
 
 
