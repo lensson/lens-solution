@@ -9,9 +9,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>com.lens</groupId>
-    <artifactId>platform</artifactId>
+    <artifactId>lens-platform</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>platform</name>
+    <name>lens-platform</name>
     <description>Platform project for Lens-solution</description>
 
     <properties>
@@ -44,7 +44,7 @@
             <version>${mybatis-plus.version}</version>
         </dependency>
 
-        <!-- mybatic code generator -->
+        <!-- mybatis code generator -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>

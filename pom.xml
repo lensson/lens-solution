@@ -69,14 +69,15 @@
     <modules>
         <!-- common first -->
         <module>lens-common</module>
-
+        <!--
         <module>nacos</module>
+        -->
         <module>lens-gateway</module>
 
 
 
-        <module>platform</module>
-        <module>wx/gzh</module>
+        <module>lens-platform</module>
+        <module>wx</module>
 
 
 
