@@ -37,10 +37,10 @@ public class ResourceServerConfig {
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http){
 
-//        http.oauth2ResourceServer().jwt()
-//                .jwtAuthenticationConverter(jwtAuthenticationConverter());
-//        // 自定义处理JWT请求头过期或签名错误的结果
-//        http.oauth2ResourceServer().authenticationEntryPoint(customServerAuthenticationEntryPoint);
+        http.oauth2ResourceServer().jwt()
+                .jwtAuthenticationConverter(jwtAuthenticationConverter());
+        // 自定义处理JWT请求头过期或签名错误的结果
+        http.oauth2ResourceServer().authenticationEntryPoint(customServerAuthenticationEntryPoint);
 //        http.authorizeExchange()
 //                .pathMatchers(ArrayUtil.toArray(whiteListConfig.getUrls(),String.class)).permitAll()
 //                .anyExchange().access(authorizationManager)

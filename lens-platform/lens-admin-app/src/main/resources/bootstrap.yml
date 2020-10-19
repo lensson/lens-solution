@@ -1,0 +1,38 @@
+server.port: 9011
+
+---
+spring:
+  profiles:
+    active: dev
+
+---
+
+spring:
+  application:
+    name: lens-admin-app
+  cloud:
+    nacos:
+      discovery:
+        server-addr: nacos:8848
+        metadata:
+          VERSION: 1.0
+      config:
+        server-addr: nacos:8848
+        file-extension: yaml
+  profiles: prod
+
+---
+
+spring:
+  application:
+    name: lens-admin-app
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        metadata:
+          VERSION: 1.0
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+  profiles: dev

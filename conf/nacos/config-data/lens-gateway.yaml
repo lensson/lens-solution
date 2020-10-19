@@ -1,0 +1,41 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'lb://lens-auth/rsa/publicKey'
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+        lowerCaseServiceId: true
+      routes:
+        - id: lens-gateway
+          uri: lb://lens-gateway
+          predicates:
+            - Path=/v1/gateway/**
+          filters:
+            - StripPrefix=2
+        - id: gzh
+          uri: lb://gzh
+          predicates:
+            - Path=/v1/wx/gzh/**
+          filters:
+            - StripPrefix=3
+        - id: lens-auth
+          uri: lb://lens-auth
+          predicates:
+            - Path=/v1/auth/**
+          filters:
+            - StripPrefix=2
+whitelist:
+  urls:
+    - "/v1/auth/oauth/token"
+    - "/v1/auth/rsa/publicKey"
+    - "/v1/wx/gzh/echo"

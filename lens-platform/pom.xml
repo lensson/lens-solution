@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <version>0.0.1-SNAPSHOT</version>
+
     <parent>
         <groupId>com.lens</groupId>
         <artifactId>lens-solution</artifactId>
@@ -10,144 +13,38 @@
     </parent>
     <groupId>com.lens</groupId>
     <artifactId>lens-platform</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>lens-platform</name>
-    <description>Platform project for Lens-solution</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>lens-admin-api</module>
+        <module>lens-admin-app</module>
+    </modules>
 
     <properties>
-        <java.version>1.8</java.version>
+
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.lens</groupId>
-            <artifactId>lens-common-core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.lens</groupId>
+                <artifactId>lens-common-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
-        <!--常用工具类 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
 
-        <!--mybatis plus extension,包含了mybatis plus core-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-extension</artifactId>
-            <version>${mybatis-plus.version}</version>
-        </dependency>
-        <!--mybatis-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
-        </dependency>
-
-        <!-- mybatis code generator -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-generator</artifactId>
-            <version>${mybatis-plus.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-
-        <!-- pool 对象池 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-        </dependency>
-
-        <!-- Mysql驱动包 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <!--velocity代码生成使用模板 -->
-        <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity</artifactId>
-            <version>${velocity.version}</version>
-        </dependency>
-
-        <!-- springboot test -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!-- swagger2-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.swagger</groupId>
-                    <artifactId>swagger-annotations</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>io.swagger</groupId>
-                    <artifactId>swagger-models</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!--防止进入swagger页面报类型转换错误，排除2.9.2中的引用，手动增加1.5.21版本-->
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>1.5.21</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-models</artifactId>
-            <version>1.5.21</version>
-        </dependency>
-
-        <!-- swagger2-UI-->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${swagger.version}</version>
-        </dependency>
-    </dependencies>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
     </build>
 

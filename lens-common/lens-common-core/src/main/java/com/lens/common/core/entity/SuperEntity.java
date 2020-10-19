@@ -28,7 +28,7 @@ public class SuperEntity implements Serializable {
 	 */
 	private static final long serialVersionUID = -4801865210961587582L;
 	
-	private Long id;
-    private Boolean deleted;
+//	private Long id;
+//    private Boolean deleted;
 
 }

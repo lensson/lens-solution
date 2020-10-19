@@ -17,15 +17,64 @@
     <modules>
         <module>lens-common-core</module>
         <module>lens-common-redis</module>
+        <module>lens-common-mariadb</module>
     </modules>
 
     <properties>
+        <mysql.version>8.0.19</mysql.version>
+
+        <swagger.version>2.9.2</swagger.version>
+        <swagger-annotations.version>1.5.21</swagger-annotations.version>
+        <swagger-models.version>1.5.21</swagger-models.version>
 
     </properties>
 
+
     <dependencyManagement>
         <dependencies>
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
 
+            <!-- druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger-models.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
