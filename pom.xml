@@ -44,7 +44,7 @@
         <dockerfile.maven.version>1.4.10</dockerfile.maven.version>
 
 
-
+        <lombok.version>1.18.12</lombok.version>
 
 
         <pagehelper.spring.boot.starter.version>1.2.5</pagehelper.spring.boot.starter.version>
@@ -85,6 +85,19 @@
 
 
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>

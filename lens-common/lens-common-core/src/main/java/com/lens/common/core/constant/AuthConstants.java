@@ -43,11 +43,27 @@ public interface AuthConstants {
      */
     String TOKEN_BLACKLIST_PREFIX = "auth:token:blacklist:";
 
+    /**
+     * 密码加密方式
+     */
+    String BCRYPT = "{bcrypt}";
 
+    String JWT_USER_ID_KEY = "id";
+
+    String JWT_CLIENT_ID_KEY = "client_id";
 
     /**
      * Gateway接口路径匹配
      */
     String GATEWAY_URL_PATTERN ="/v1/gateway/**" ;
 
+
+
+    String ADMIN_CLIENT_ID="lens-admin-app";
+
+
+    /**
+     * 小程序客户端ID
+     */
+    String WEAPP_CLIENT_ID="lens-wx-app";
 }

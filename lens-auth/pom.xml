@@ -87,6 +87,19 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-admin-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-core</artifactId>
+            <version>2.9.2</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>

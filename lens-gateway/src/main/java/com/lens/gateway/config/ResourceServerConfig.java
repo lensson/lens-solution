@@ -1,5 +1,6 @@
 package com.lens.gateway.config;
 
+import cn.hutool.core.util.ArrayUtil;
 import com.lens.common.core.constant.AuthConstants;
 import com.lens.gateway.component.AuthorizationManager;
 import com.lens.gateway.component.CustomServerAccessDeniedHandler;
@@ -41,14 +42,14 @@ public class ResourceServerConfig {
                 .jwtAuthenticationConverter(jwtAuthenticationConverter());
         // 自定义处理JWT请求头过期或签名错误的结果
         http.oauth2ResourceServer().authenticationEntryPoint(customServerAuthenticationEntryPoint);
-//        http.authorizeExchange()
-//                .pathMatchers(ArrayUtil.toArray(whiteListConfig.getUrls(),String.class)).permitAll()
-//                .anyExchange().access(authorizationManager)
-//                .and()
-//                .exceptionHandling()
-//                .accessDeniedHandler(customServerAccessDeniedHandler) // 处理未授权
-//                .authenticationEntryPoint(customServerAuthenticationEntryPoint) //处理未认证
-//                .and().csrf().disable();
+        http.authorizeExchange()
+                .pathMatchers(ArrayUtil.toArray(whiteListConfig.getUrls(),String.class)).permitAll()
+                .anyExchange().access(authorizationManager)
+                .and()
+                .exceptionHandling()
+                .accessDeniedHandler(customServerAccessDeniedHandler) // 处理未授权
+                .authenticationEntryPoint(customServerAuthenticationEntryPoint) //处理未认证
+                .and().csrf().disable();
 
         return http.build();
     }
