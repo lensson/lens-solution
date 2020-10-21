@@ -16,12 +16,6 @@ spring:
           enabled: true
         lowerCaseServiceId: true
       routes:
-        - id: lens-gateway
-          uri: lb://lens-gateway
-          predicates:
-            - Path=/v1/gateway/**
-          filters:
-            - StripPrefix=2
         - id: gzh
           uri: lb://gzh
           predicates:
@@ -39,3 +33,11 @@ whitelist:
     - "/v1/auth/oauth/token"
     - "/v1/auth/rsa/publicKey"
     - "/v1/wx/gzh/echo"
+    - "/v1/auth/echo"
+    - "/echo"
+
+# 日志配置
+logging:
+  level:
+    com.lens: debug
+    org.springframework: debug
