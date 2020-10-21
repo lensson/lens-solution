@@ -31,7 +31,7 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String token = exchange.getRequest().getHeaders().getFirst(AuthConstants.JWT_TOKEN_HEADER);
-        if (StrUtil.isBlank(token)) {
+        if (StrUtil.isBlank(token) || !token.contains(AuthConstants.JWT_TOKEN_PREFIX)) {
             return chain.filter(exchange);
         }
 
