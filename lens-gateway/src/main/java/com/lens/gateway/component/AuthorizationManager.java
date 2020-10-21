@@ -14,7 +14,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.server.authorization.AuthorizationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
-import org.springframework.util.PathMatcher;
 import reactor.core.publisher.Mono;
 
 import java.util.HashSet;
@@ -35,7 +34,11 @@ public class AuthorizationManager implements ReactiveAuthorizationManager<Author
 
     private WhiteListConfig whiteListConfig;
 
+    private static final AntPathMatcher pathMatcher = new AntPathMatcher();
 
+    private boolean isPermit(String requestPath) {
+        return whiteListConfig.getUrls().stream().anyMatch(r -> pathMatcher.match(r,requestPath));
+    }
 
     @Override
     public Mono<AuthorizationDecision> check(Mono<Authentication> mono, AuthorizationContext authorizationContext) {
@@ -47,14 +50,18 @@ public class AuthorizationManager implements ReactiveAuthorizationManager<Author
             return Mono.just(new AuthorizationDecision(true));
         }
 
+        String path = request.getURI().getPath();
+        if(isPermit(path)){
+            return Mono.just(new AuthorizationDecision(true));
+        }
+
         // token为空拒绝访问
         String token = request.getHeaders().getFirst(AuthConstants.JWT_TOKEN_HEADER);
         if (StrUtil.isBlank(token)) {
             return Mono.just(new AuthorizationDecision(false));
         }
 
-        String path = request.getURI().getPath();
-        PathMatcher pathMatcher = new AntPathMatcher();
+
 
         // Only limit Gateway now
         if (!pathMatcher.match(AuthConstants.GATEWAY_URL_PATTERN, path)) {
