@@ -19,6 +19,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -31,10 +32,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFactory;
 
 import java.security.KeyPair;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Configuration
 @EnableAuthorizationServer
@@ -48,9 +46,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     private final String Password = "123456";
 
     private AuthenticationManager authenticationManager;
-
     private UserDetailsServiceImpl userDetailsService;
     private OAuth2WebResponseExceptionTranslator oAuth2WebResponseExceptionTranslator;
+
 
     /**
      * 配置客户端详情(数据库)
@@ -58,8 +56,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     @SneakyThrows
     public void configure(ClientDetailsServiceConfigurer clients) {
-        Map<String, ? extends ClientDetails> map = new HashMap();
-        HardCodingClientDetailServiceImpl hdClientDetailService = new HardCodingClientDetailServiceImpl(map);
+
+
+        HardCodingClientDetailServiceImpl hdClientDetailService = new HardCodingClientDetailServiceImpl();
         clients.withClientDetails(hdClientDetailService);
     }
 
