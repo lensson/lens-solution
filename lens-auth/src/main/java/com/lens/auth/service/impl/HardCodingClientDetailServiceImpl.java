@@ -4,10 +4,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.client.InMemoryClientDetailsService;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Desc:
@@ -21,7 +18,7 @@ public class HardCodingClientDetailServiceImpl extends InMemoryClientDetailsServ
         ClientDetails c = new ClientDetails() {
             @Override
             public String getClientId() {
-                return "lens-admin-app";
+                return "lens-platform-app";
             }
 
             @Override
@@ -46,12 +43,17 @@ public class HardCodingClientDetailServiceImpl extends InMemoryClientDetailsServ
 
             @Override
             public Set<String> getScope() {
-                return null;
+                Set<String> agt = new HashSet<>();
+                agt.add("all");
+                return agt;
             }
 
             @Override
             public Set<String> getAuthorizedGrantTypes() {
-                return null;
+                Set<String> agt = new HashSet<>();
+                agt.add("password");
+                agt.add("refresh_token");
+                return agt;
             }
 
             @Override
@@ -61,8 +63,17 @@ public class HardCodingClientDetailServiceImpl extends InMemoryClientDetailsServ
 
             @Override
             public Collection<GrantedAuthority> getAuthorities() {
-                return null;
+                List<GrantedAuthority> gaList = new ArrayList<>();
+                GrantedAuthority ga = new GrantedAuthority() {
+                    @Override
+                    public String getAuthority() {
+                        return "admin";
+                    }
+                };
+                gaList.add(ga);
+                return gaList;
             }
+
 
             @Override
             public Integer getAccessTokenValiditySeconds() {

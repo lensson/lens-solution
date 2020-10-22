@@ -17,37 +17,38 @@ package com.lens.common.core.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 
-
+@ApiModel
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class BaseEntity extends SuperEntity {
 
-	/**
-	 * serialVersionUID
-	 */
-	private static final long serialVersionUID = 199327361052220940L;
+    /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = 199327361052220940L;
 
 
-	@TableField(fill = FieldFill.INSERT)
-	@ApiModelProperty(value = "创建人", example = "admin")
-	private String createBy;
+    @TableField(fill = FieldFill.INSERT)
+    @ApiModelProperty(value = "创建人", example = "admin")
+    private String createBy;
 
-	@TableField(fill = FieldFill.INSERT)
-	@ApiModelProperty(value = "创建时间", example = "2020-01-01 12:00:00")
-	private Date createTime;
+    @TableField(fill = FieldFill.INSERT)
+    @ApiModelProperty(value = "创建时间", example = "2020-01-01 12:00:00")
+    private Date createTime;
 
-	@TableField(fill = FieldFill.INSERT_UPDATE)
-	@ApiModelProperty(value = "修改人", example = "admin")
-	private String updateBy;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @ApiModelProperty(value = "修改人", example = "admin")
+    private String updateBy;
 
-	@TableField(fill = FieldFill.INSERT_UPDATE)
-	@ApiModelProperty(value = "创建时间", example = "2020-01-01 12:00:00")
-	private Date updateTime;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    @ApiModelProperty(value = "创建时间", example = "2020-01-01 12:00:00")
+    private Date updateTime;
 
 }

@@ -61,7 +61,7 @@
 
         <hutool.version>5.1.0</hutool.version>
 
-
+        <minio.version>7.1.0</minio.version>
         <!-- wei xin -->
         <weixin-java.version>3.9.0</weixin-java.version>
 
@@ -101,6 +101,19 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>

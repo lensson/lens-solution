@@ -1,4 +1,4 @@
-package com.lens.auth.entity;
+package com.lens.auth.domain;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

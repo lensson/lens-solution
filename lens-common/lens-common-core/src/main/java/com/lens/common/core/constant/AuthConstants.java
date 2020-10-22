@@ -55,15 +55,14 @@ public interface AuthConstants {
     /**
      * Gateway接口路径匹配
      */
-    String GATEWAY_URL_PATTERN ="/v1/gateway/**" ;
+    String GATEWAY_URL_PATTERN = "/v1/gateway/**";
 
 
-
-    String ADMIN_CLIENT_ID="lens-admin-app";
+    String ADMIN_CLIENT_ID = "lens-admin-app";
 
 
     /**
      * 小程序客户端ID
      */
-    String WEAPP_CLIENT_ID="lens-wx-app";
+    String WEAPP_CLIENT_ID = "lens-wx-app";
 }

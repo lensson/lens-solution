@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <version>0.0.1-SNAPSHOT</version>
 
     <parent>
         <groupId>com.lens</groupId>
@@ -10,7 +11,7 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
+    <groupId>com.lens</groupId>
     <artifactId>lens-common</artifactId>
     <packaging>pom</packaging>
 
@@ -18,17 +19,17 @@
         <module>lens-common-core</module>
         <module>lens-common-redis</module>
         <module>lens-common-mariadb</module>
+        <module>lens-common-web</module>
     </modules>
 
     <properties>
-        <mysql.version>8.0.19</mysql.version>
+        <lens-common.version>0.0.1-SNAPSHOT</lens-common.version>
 
         <swagger.version>2.9.2</swagger.version>
         <swagger-annotations.version>1.5.21</swagger-annotations.version>
-        <swagger-models.version>1.5.21</swagger-models.version>
 
+        <mysql.version>8.0.19</mysql.version>
     </properties>
-
 
     <dependencyManagement>
         <dependencies>
@@ -53,7 +54,6 @@
                 <version>${mybatis-plus.version}</version>
             </dependency>
 
-
             <!-- swagger -->
             <dependency>
                 <groupId>io.springfox</groupId>
@@ -75,6 +75,47 @@
                 <artifactId>swagger-models</artifactId>
                 <version>${swagger-models.version}</version>
             </dependency>
+
+            <!-- redisson -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${common-pools.version}</version>
+            </dependency>
+
+            <!-- common -->
+            <dependency>
+                <groupId>com.lens</groupId>
+                <artifactId>lens-common-core</artifactId>
+                <version>${lens-common.version}</version>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>com.lens</groupId>
+                <artifactId>lens-common-redis</artifactId>
+                <version>${lens-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lens</groupId>
+                <artifactId>lens-common-web</artifactId>
+                <version>${lens-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lens</groupId>
+                <artifactId>lens-common-db</artifactId>
+                <version>${lens-common.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

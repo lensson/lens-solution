@@ -11,33 +11,16 @@
 
     <groupId>com.lens</groupId>
     <artifactId>lens-admin-api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>lens-admin-api</name>
     <description>Admin API</description>
 
     <properties>
         <java.version>1.8</java.version>
+
+        <lens-common.version>0.0.1-SNAPSHOT</lens-common.version>
     </properties>
 
     <dependencies>
-
-        <dependency>
-            <groupId>com.lens</groupId>
-            <artifactId>lens-common-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -51,31 +34,26 @@
             <artifactId>feign-okhttp</artifactId>
         </dependency>
 
-
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-common-web</artifactId>
+            <version>${lens-common.version}</version>
         </dependency>
 
-        <!-- swagger2-annotations -->
+        <dependency>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-common-mariadb</artifactId>
+            <version>${lens-common.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
             <version>1.5.21</version>
+            <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

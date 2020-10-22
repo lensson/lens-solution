@@ -15,7 +15,6 @@
     <description>Redis Configuration</description>
 
 
-
     <dependencies>
         <!-- spring boot redis -->
         <dependency>

@@ -1,7 +1,12 @@
 package com.lens.auth.service.impl;
 
-import com.lens.auth.entity.User;
+
+import com.lens.auth.domain.User;
 import com.lens.common.core.constant.AuthConstants;
+import com.lens.common.core.result.Result;
+import com.lens.common.core.result.ResultCode;
+import com.lens.platform.admin.api.RemoteAdminService;
+import com.lens.platform.admin.dto.UserDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.CredentialsExpiredException;
@@ -16,48 +21,30 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * Desc:
- *
+ *    自定义用户认证和授权
  * @author Lens Chen
  * @created 2020-10-20 2:32 PM
- */
-
-/**
- * 自定义用户认证和授权
  */
 @Service
 @AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-
     private HttpServletRequest request;
+    private RemoteAdminService remoteAdminService;
 
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        String clientId = request.getParameter("client_id");
         User user = null;
-
-        user = forkUser();
-        switch (clientId) {
-            case AuthConstants.ADMIN_CLIENT_ID: // 后台用户
-//                Result<UserDTO> userResult = remoteAdminService.loadUserByUsername(username);
-//                if (userResult == null || !ResultCode.SUCCESS.getCode().equals(userResult.getCode())) {
-//                    throw new UsernameNotFoundException("用户不存在");
-//                }
-//                UserDTO userDTO = userResult.getData();
-//                userDTO.setClientId(clientId);
-//                user = new User(userDTO);
-                break;
-            case AuthConstants.WEAPP_CLIENT_ID: // 小程序会员
-//                Result<MemberDTO> memberResult = remoteUmsMemberService.loadMemberByOpenid(username);
-//                if (memberResult == null || !ResultCode.SUCCESS.getCode().equals(memberResult.getCode())) {
-//                    throw new UsernameNotFoundException("会员不存在");
-//                }
-//                MemberDTO memberDTO = memberResult.getData();
-//                memberDTO.setClientId(clientId);
-//                user = new User(memberDTO);
-                break;
+        String clientId = request.getParameter("client_id");
+        Result<UserDTO> userResult = remoteAdminService.loadUserByUsername(s);
+        if (userResult == null || !ResultCode.SUCCESS.getCode().equals(userResult.getCode())) {
+            throw new UsernameNotFoundException("用户不存在");
         }
+        UserDTO userDTO = userResult.getData();
+        userDTO.setClientId(clientId);
+        user = new User(userDTO);
+
         if (!user.isEnabled()) {
             throw new DisabledException("该账户已被禁用!");
         } else if (!user.isAccountNonLocked()) {
@@ -79,4 +66,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         user.setPassword("admin");
         return user;
     }
+
+
+
 }

@@ -10,26 +10,27 @@
     </parent>
     <groupId>com.lens</groupId>
     <artifactId>lens-admin-app</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>lens-admin-app</name>
     <description>Admin APP</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <lens-common.version>0.0.1-SNAPSHOT</lens-common.version>
+        <minio.version>7.1.0</minio.version>
     </properties>
 
     <dependencies>
+
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-admin-api</artifactId>
+            <version>${lens-common.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-common-redis</artifactId>
+            <version>${lens-common.version}</version>
         </dependency>
-
 
         <!-- nacos 依赖-->
         <dependency>
@@ -47,6 +48,17 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>${minio.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -59,6 +71,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
     </dependencies>
 
     <build>

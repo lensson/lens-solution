@@ -23,7 +23,13 @@
         <dependency>
             <groupId>com.lens</groupId>
             <artifactId>lens-common-core</artifactId>
-            <version>${project.version}</version>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-admin-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>

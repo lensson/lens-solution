@@ -19,15 +19,15 @@ public class LensException extends RuntimeException {
         this.resultCode = errorCode;
     }
 
-    public LensException(String message){
+    public LensException(String message) {
         super(message);
     }
 
-    public LensException(String message, Throwable cause){
+    public LensException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public LensException(Throwable cause){
+    public LensException(Throwable cause) {
         super(cause);
     }
 }
