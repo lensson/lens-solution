@@ -30,20 +30,23 @@ import javax.servlet.http.HttpServletRequest;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private HttpServletRequest request;
-    private RemoteAdminService remoteAdminService;
+
+//    private RemoteAdminService remoteAdminService;
 
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         User user = null;
         String clientId = request.getParameter("client_id");
-        Result<UserDTO> userResult = remoteAdminService.loadUserByUsername(s);
-        if (userResult == null || !ResultCode.SUCCESS.getCode().equals(userResult.getCode())) {
-            throw new UsernameNotFoundException("用户不存在");
-        }
-        UserDTO userDTO = userResult.getData();
-        userDTO.setClientId(clientId);
-        user = new User(userDTO);
+//        Result<UserDTO> userResult = remoteAdminService.loadUserByUsername(s);
+//        if (userResult == null || !ResultCode.SUCCESS.getCode().equals(userResult.getCode())) {
+//            throw new UsernameNotFoundException("用户不存在");
+//        }
+//        UserDTO userDTO = userResult.getData();
+//        userDTO.setClientId(clientId);
+//        user = new User(userDTO);
+        user = forkUser();
+        user.setClientId(clientId);
 
         if (!user.isEnabled()) {
             throw new DisabledException("该账户已被禁用!");

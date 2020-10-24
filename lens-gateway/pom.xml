@@ -10,9 +10,9 @@
     </parent>
 
     <groupId>com.lens</groupId>
-    <artifactId>lens-gateway</artifactId>
+    <artifactId>lens-gateway-bk</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lens-gateway</name>
+    <name>lens-gateway-bk</name>
     <description>Gateway of solution</description>
 
     <properties>

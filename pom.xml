@@ -75,7 +75,8 @@
         <!--
         <module>nacos</module>
         -->
-        <module>lens-gateway</module>
+
+        <module>lens-infra</module>
 
 
 
@@ -108,13 +109,6 @@
             </dependency>
 
             <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus.version}</version>
-            </dependency>
-
-
-            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot-version}</version>
@@ -145,6 +139,10 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
