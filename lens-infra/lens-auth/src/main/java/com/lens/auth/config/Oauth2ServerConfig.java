@@ -40,7 +40,7 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("client-app")
+                .withClient("lens-admin-client")
                 .secret(passwordEncoder.encode("123456"))
                 .scopes("all")
                 .authorizedGrantTypes("password", "refresh_token")

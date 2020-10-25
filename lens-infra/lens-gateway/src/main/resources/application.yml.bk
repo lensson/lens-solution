@@ -1,0 +1,40 @@
+server:
+  port: 8849
+spring:
+  profiles:
+    active: dev
+  application:
+    name: lens-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      routes: #配置路由路径
+        - id: lens-auth-route
+          uri: lb://lens-auth
+          predicates:
+            - Path=/api/v1/auth/**
+          filters:
+            - StripPrefix=3
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能
+          lower-case-service-id: true #使用小写服务名，默认是大写
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: lb://lens-gateway/rsa/publicKey #配置RSA的公钥访问地址
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+secure:
+  ignore:
+    urls: #配置白名单路径
+      - "/actuator/**"
+      - "/api/v1/auth/oauth/token"
+logging:
+  level:
+    org.springframework: debug

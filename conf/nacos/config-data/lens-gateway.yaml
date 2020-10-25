@@ -38,4 +38,4 @@ secure:
 logging:
   level:
     com.lens: debug
-    org.springframework: info
+    org.springframework: debug
