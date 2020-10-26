@@ -1,1 +1,0 @@
-CREATE USER lens IDENTIFIED BY 'lens';
