@@ -4,11 +4,6 @@ server:
 spring:
   application:
     name: lens-gateway
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://{lens-auth:localhost}:8850/rsa/publicKey
   redis:
     database: 0
     host: ${redis:localhost}
