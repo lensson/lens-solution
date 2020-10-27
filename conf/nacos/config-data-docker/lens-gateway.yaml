@@ -1,0 +1,40 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://172.17.0.1:8850/rsa/publicKey'
+  redis:
+    database: 0
+    host: 172.17.0.1
+    port: 6379
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+        lowerCaseServiceId: true
+      routes:
+        - id: gzh
+          uri: lb://gzh
+          predicates:
+            - Path=/api/v1/wx/gzh/**
+          filters:
+            - StripPrefix=4
+        - id: lens-auth
+          uri: lb://lens-auth
+          predicates:
+            - Path=/api/v1/auth/**
+          filters:
+            - StripPrefix=3
+secure:
+  ignore:
+    urls:
+      - "/actuator/**"
+      - "/api/v1/auth/oauth/token"
+
+# 日志配置
+logging:
+  level:
+    com.lens: debug
+    org.springframework: info
