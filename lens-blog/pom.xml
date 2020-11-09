@@ -20,6 +20,7 @@
 
         <module>lens-blog-admin-backend</module>
         <module>lens-blog-backend</module>
+
     </modules>
 
     <properties>
