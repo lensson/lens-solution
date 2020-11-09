@@ -1,2 +1,0 @@
-CREATE USER lens IDENTIFIED BY 'lens';
-CREATE USER nacos IDENTIFIED BY 'nacos';

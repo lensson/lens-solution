@@ -1,1 +1,0 @@
-keytool -genkey -alias lens -keyalg RSA -keypass 123456 -keystore lens.jks -storepass 123456
