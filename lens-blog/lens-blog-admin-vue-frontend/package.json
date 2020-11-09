@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "build": "node build/build.js",
+    "build:report": "npm_config_report=true npm run build",
+    "lint": "eslint --ext .js,.vue src",
+    "test": "npm run lint"
   },
   "dependencies": {
     "axios": "0.18.1",
@@ -56,7 +59,7 @@
     "eventsource-polyfill": "0.9.6",
     "file-loader": "1.1.11",
     "friendly-errors-webpack-plugin": "1.7.0",
-    "html-webpack-plugin": "4.0.0-alpha",
+    "html-webpack-plugin": "^3.0.0",
     "less": "^3.12.2",
     "mini-css-extract-plugin": "0.4.1",
     "node-notifier": "5.2.1",
@@ -86,23 +89,13 @@
     "webpack-dev-server": "3.1.5",
     "webpack-merge": "4.1.4"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not dead"
+    "not ie <= 8"
   ]
 }
