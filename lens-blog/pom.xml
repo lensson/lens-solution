@@ -16,22 +16,33 @@
     <artifactId>lens-blog</artifactId>
     <packaging>pom</packaging>
 
-    <modules>
-
-        <module>lens-blog-admin-backend</module>
-        <module>lens-blog-admin-vue-frontend</module>
-        <module>lens-blog-backend</module>
-        <module>lens-blog-vue-frontend</module>
-
-    </modules>
 
     <properties>
 
     </properties>
 
+    <modules>
+        <module>lens-blog-utils</module>
+        <module>lens-blog-api</module>
+        <module>lens-blog-app</module>
+        <module>lens-blog-admin-backend</module>
+        <module>lens-blog-backend</module>
+        <!--
+        <module>lens-blog-admin-vue-frontend</module>
+        <module>lens-blog-vue-frontend</module>
+        -->
+
+
+    </modules>
+
+
+
     <dependencies>
 
-
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
 
 
 
