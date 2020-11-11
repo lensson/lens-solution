@@ -6,10 +6,27 @@
         <artifactId>lens-blog</artifactId>
         <groupId>com.lens</groupId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>lens-blog-common</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-blog-base</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-web-servlet</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-parameter-flow-control</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

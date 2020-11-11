@@ -57,13 +57,14 @@
     <modules>
         <module>lens-blog-utils</module>
         <module>lens-blog-base</module>
-
+        <module>lens-blog-common</module>
+        <module>lens-blog-xo</module>
         <!--
         <module>lens-blog-app</module>
         <module>lens-blog-admin-backend</module>
         <module>lens-blog-backend</module>
-        <module>lens-blog-common</module>
-        <module>lens-blog-xo</module>
+
+
         -->
         <!--
         <module>lens-blog-admin-vue-frontend</module>
