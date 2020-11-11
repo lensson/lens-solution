@@ -9,6 +9,7 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.2.RELEASE</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <version>0.0.1-SNAPSHOT</version>
     <groupId>com.lens</groupId>
@@ -59,6 +60,7 @@
         <module>lens-blog-base</module>
         <module>lens-blog-common</module>
         <module>lens-blog-xo</module>
+        <module>lens-blog-admin-backend</module>
         <!--
         <module>lens-blog-app</module>
         <module>lens-blog-admin-backend</module>
