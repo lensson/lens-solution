@@ -18,9 +18,11 @@
     </properties>
 
     <dependencies>
+
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>com.lens</groupId>
+            <artifactId>lens-blog-utils</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
@@ -43,6 +45,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+
     </build>
 
 </project>

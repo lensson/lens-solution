@@ -88,8 +88,6 @@
 
         <!-- wechat module-->
         <module>wx</module>
-        <module>lens-blog-api</module>
-        <module>lens-blog-utils</module>
 
 
     </modules>
