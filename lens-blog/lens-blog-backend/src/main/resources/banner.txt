@@ -1,0 +1,9 @@
+${AnsiColor.BRIGHT_CYAN}
+,--.                               ,-----.   ,--.
+|  |     ,---.  ,--,--,   ,---.    |  |) /_  |  |  ,---.   ,---.
+|  |    | .-. : |      \ (  .-'    |  .-.  \ |  | | .-. | | .-. |
+|  '--. \   --. |  ||  | .-'  `)   |  '--' / |  | ' '-' ' ' '-' '
+`-----'  `----' `--''--' `----'    `------'  `--'  `---'  .`-  /
+                                                          `---'
+${AnsiColor.BRIGHT_BLACK}
+Spring Boot Version: ${spring-boot.version}${spring-boot.formatted-version}

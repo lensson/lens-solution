@@ -45,8 +45,8 @@ public class CreatCodeRestApi {
     @Value(value = "${signName}")
     private String signName;
 
-    @Value(value = "${moguBlog.email}")
-    private String moguBlogEmail;
+    @Value(value = "${lensBlog.email}")
+    private String lensBlogEmail;
 
     @OperationLogger(value = "生成验证码")
     @ApiOperation(value = "生成验证码", notes = "生成验证码")
@@ -66,7 +66,7 @@ public class CreatCodeRestApi {
         String text =
                 "<html>\r\n" +
                         " <head>\r\n" +
-                        "  <title> mogublog </title>\r\n" +
+                        "  <title> lensblog </title>\r\n" +
                         " </head>\r\n" +
                         " <body>\r\n" +
                         "  <div id=\"contentDiv\" onmouseover=\"getTop().stopPropagation(event);\" onclick=\"getTop().preSwapLink(event, 'spam', 'ZC1222-PrLAp4T0Z7Z7UUMYzqLkb8a');\" style=\"position:relative;font-size:14px;height:auto;padding:15px 15px 10px 15px;z-index:1;zoom:1;line-height:1.7;\" class=\"body\">    \r\n" +
@@ -86,7 +86,7 @@ public class CreatCodeRestApi {
                         "\r\n" +
                         "</div>\r\n" +
                         "<div class=\"panel-body\">\r\n" +
-                        "<p>您好 <a href=\"mailto:" + moguBlogEmail + "\" rel=\"noopener\" target=\"_blank\">" + info + "<wbr></a>！</p>\r\n" +
+                        "<p>您好 <a href=\"mailto:" + lensBlogEmail + "\" rel=\"noopener\" target=\"_blank\">" + info + "<wbr></a>！</p>\r\n" +
                         "<p>欢迎注册蘑菇博客，请将验证码填写到注册页面。</p>\r\n" +
                         "<p>验证码：" + code + "</p>\r\n" +
                         "\r\n" +
@@ -110,7 +110,7 @@ public class CreatCodeRestApi {
             map.put("text", text);
 
             //发送到RabbitMq
-            rabbitTemplate.convertAndSend("exchange.direct", "mogu.email", map);
+            rabbitTemplate.convertAndSend("exchange.direct", "lens.email", map);
 
         }
         if (CheckUtils.checkMobileNumber(info)) {
@@ -120,7 +120,7 @@ public class CreatCodeRestApi {
             map.put("template_code", templateCode);//短信模板编号
             map.put("sign_name", signName);//短信签名
             //发送到RabbitMq
-            rabbitTemplate.convertAndSend("exchange.direct", "mogu.sms", map);
+            rabbitTemplate.convertAndSend("exchange.direct", "lens.sms", map);
         }
 
         //存入缓存

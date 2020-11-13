@@ -14,13 +14,13 @@ public class MybatisPlusConfig {
 
     /**
      * 相当于顶部的：
-     * {@code @MapperScan("com.baomidou.springboot.mapper*")}
+     * {@code @MapperScan("com.lens.blog.xo.mapper*)}
      * 这里可以扩展，比如使用配置文件来配置扫描Mapper的路径
      */
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer scannerConfigurer = new MapperScannerConfigurer();
-        scannerConfigurer.setBasePackage("com.moxi.mogublog.xo.mapper*");
+        scannerConfigurer.setBasePackage("com.lens.blog.xo.mapper*");
         return scannerConfigurer;
     }
 
