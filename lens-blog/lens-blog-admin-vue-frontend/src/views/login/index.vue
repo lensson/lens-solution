@@ -8,7 +8,7 @@
       auto-complete="on"
       label-position="left"
     >
-      <h3 class="title">蘑菇博客后台管理系统</h3>
+      <h3 class="title">麻辣博客后台管理系统</h3>
       <el-form-item prop="username">
         <span class="svg-container svg-container_login">
           <svg-icon icon-class="user"/>
@@ -40,7 +40,8 @@
         </span>
       </el-form-item>
 
-      <el-checkbox v-model="loginForm.isRememberMe" style="margin:0px 0px 25px 0px;"><span style="color: #eee">七天免登录</span></el-checkbox>
+      <el-checkbox v-model="loginForm.isRememberMe" style="margin:0px 0px 25px 0px;"><span
+        style="color: #eee">七天免登录</span></el-checkbox>
 
       <el-form-item>
         <el-button
@@ -48,7 +49,8 @@
           type="primary"
           style="width:100%;"
           @click.native.prevent="handleLogin"
-        >登 录</el-button>
+        >登 录
+        </el-button>
       </el-form-item>
     </el-form>
 
@@ -76,7 +78,7 @@
 </template>
 
 <script>
-import { isvalidUsername } from "@/utils/validate";
+import {isvalidUsername} from "@/utils/validate";
 
 export default {
   name: "Login",
@@ -104,9 +106,9 @@ export default {
       },
       loginRules: {
         username: [
-          { required: true, trigger: "blur", validator: validateUsername }
+          {required: true, trigger: "blur", validator: validateUsername}
         ],
-        password: [{ required: true, trigger: "blur", validator: validatePass }]
+        password: [{required: true, trigger: "blur", validator: validatePass}]
       },
       loading: false,
       pwdType: "password",
@@ -130,7 +132,7 @@ export default {
     // this.$refs.userNameInput.focus()
   },
   methods: {
-    inputFocus: function() {
+    inputFocus: function () {
       this.$nextTick(x => {
         this.$refs.userNameInput.focus()
       })
@@ -150,7 +152,7 @@ export default {
             .dispatch("Login", this.loginForm)
             .then(response => {
               if (response.code == this.$ECode.SUCCESS) {
-                this.$router.push({ path: this.redirect || "/" });
+                this.$router.push({path: this.redirect || "/"});
               } else {
                 this.$message.error(response.data);
               }
@@ -179,6 +181,7 @@ $light_gray: #eee;
     display: inline-block;
     height: 47px;
     width: 85%;
+
     input {
       background: transparent;
       border: 0px;
@@ -187,12 +190,14 @@ $light_gray: #eee;
       padding: 12px 5px 12px 15px;
       color: $light_gray;
       height: 47px;
+
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px $bg inset !important;
         -webkit-text-fill-color: #fff !important;
       }
     }
   }
+
   .el-form-item {
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.1);
@@ -211,6 +216,7 @@ $light_gray: #eee;
   height: 100%;
   width: 100%;
   background-color: $bg;
+
   .login-form {
     position: absolute;
     left: 0;
@@ -220,26 +226,31 @@ $light_gray: #eee;
     padding: 35px 35px 15px 35px;
     margin: 120px auto;
   }
+
   .tips {
     font-size: 14px;
     color: #fff;
     margin-bottom: 10px;
+
     span {
       &:first-of-type {
         margin-right: 16px;
       }
     }
   }
+
   .svg-container {
     padding: 6px 5px 6px 15px;
     color: $dark_gray;
     vertical-align: middle;
     width: 30px;
     display: inline-block;
+
     &_login {
       font-size: 20px;
     }
   }
+
   .title {
     font-size: 26px;
     font-weight: 400;
@@ -248,6 +259,7 @@ $light_gray: #eee;
     text-align: center;
     font-weight: bold;
   }
+
   .show-pwd {
     position: absolute;
     right: 10px;
