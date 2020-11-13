@@ -123,7 +123,7 @@ public class LoginRestApi {
         if (roles.size() <= 0) {
             return ResultUtil.result(SysConf.ERROR, MessageConf.NO_ROLE);
         }
-        String roleNames = null;
+        String roleNames = "";
         for (Role role : roles) {
             roleNames += (role.getRoleName() + Constants.SYMBOL_COMMA);
         }
