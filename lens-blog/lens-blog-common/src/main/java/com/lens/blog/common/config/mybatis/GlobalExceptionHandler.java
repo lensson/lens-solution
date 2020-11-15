@@ -1,4 +1,4 @@
-package com.lens.blog.common.config.mybatis;//package com.moxi.mogublog.config.mybatis;
+package com.lens.blog.common.config.mybatis;//package com.lens.blog.config.mybatis;
 //
 //import java.util.ArrayList;
 //import java.util.HashMap;

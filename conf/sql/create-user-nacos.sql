@@ -1,0 +1,1 @@
+CREATE USER nacos IDENTIFIED BY 'nacos';

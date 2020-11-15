@@ -62,6 +62,8 @@
         <module>lens-blog-xo</module>
         <module>lens-blog-sms</module>
         <module>lens-blog-picture</module>
+        <module>lens-blog-monitor</module>
+        <module>lens-blog-search</module>
         <module>lens-blog-admin-backend</module>
         <module>lens-blog-backend</module>
 
