@@ -33,7 +33,7 @@ public class AboutFileUtil {
     public void creatFile(String path) {
         File file = new File(path);
         if (file.isDirectory()) {
-            log.error("该目录不存在");
+            log.error("该目录已存在");
         } else {
             file.mkdir();
         }

@@ -1,10 +1,10 @@
 package com.lens.blog.spider.pipeline;
 
+import com.lens.blog.base.enums.EPublish;
+import com.lens.blog.base.enums.EStatus;
 import com.lens.blog.spider.entity.BlogSpider;
 import com.lens.blog.spider.mapper.BlogSpiderMapper;
 import com.lens.blog.spider.util.IdWorker;
-import com.lens.blog.base.enums.EPublish;
-import com.lens.blog.base.enums.EStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -12,13 +12,11 @@ import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.pipeline.Pipeline;
 
-import java.util.Date;
-
 @Component
 public class BlogPipeline implements Pipeline {
 
 
-    private final String SAVE_PATH = "C:/Users/King/Desktop/tensquare/webmgicFile/piantuUrl/youxi/";
+    private final String SAVE_PATH = "~/containers/lens-blog-spider/tensquare/webmgicFile/piantuUrl/youxi/";
     @Autowired
     private IdWorker idWorker;
     @Autowired
