@@ -1,0 +1,36 @@
+server:
+  port: 9020
+
+spring:
+  application:
+    name: lens-blog-monitor
+  security:
+    user:
+      name: lens
+      password: lens
+  boot:
+    admin:
+      ui:
+        title: 麻辣博客监控中心
+        brand: 麻辣博客监控中心
+      notify:
+        mail:
+          enabled: false
+          # 服务上下线会自动发送邮件
+          #from: lensson_chen@sina.com
+          #to: lensson_chen@sina.com
+
+  #mail
+  mail:
+    username: lensson_chen@sina.com
+    password: lensson1 #授权码开启SMTP服务里设置
+    host: smtp.sina.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true

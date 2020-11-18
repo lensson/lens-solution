@@ -7,12 +7,12 @@ module.exports = merge(prodEnv, {
 
   //开发环境
   FILE_API: '"http://localhost:8600/"',
-  ADMIN_API: '"http://localhost:9010"',
-  PICTURE_API: '"http://localhost:8602"',
-  WEB_API: '"http://localhost:8603"',
-  Search_API: '"http://localhost:8605"',
-  SPRING_BOOT_ADMIN: '"http://localhost:8606/wallboard"',
-  SOLR_API: '"http://localhost:8080/solr"',
+  ADMIN_API: '"http://localhost:9002"',
+  PICTURE_API: '"http://localhost:9012"',
+  WEB_API: '"http://localhost:9001"',
+  Search_API: '"http://localhost:9013"',
+  SPRING_BOOT_ADMIN: '"http://localhost:9020/wallboard"',
+  SOLR_API: '"http://localhost:8983/solr"',
   Zipkin_Admin: '"http://localhost:9411/zipkin/"',
   SENTINEL_ADMIN: '"http://localhost:8070/sentinel/"',
   ELASTIC_SEARCH: '"http://localhost:5601"',
