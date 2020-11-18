@@ -67,10 +67,10 @@
         <module>lens-blog-admin-backend</module>
         <module>lens-blog-backend</module>
 
-        <!--
+
         <module>lens-blog-admin-vue-frontend</module>
         <module>lens-blog-vue-frontend</module>
-        -->
+
 
 
     </modules>
