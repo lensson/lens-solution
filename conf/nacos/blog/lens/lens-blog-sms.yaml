@@ -50,7 +50,7 @@ spring:
     admin:
       client:
         enabled: true
-        url: http://${lens-monitor:localhost}:9020
+        url: http://${lens-blog-monitor:localhost}:9020
         username: lens
         password: lens
         instance:

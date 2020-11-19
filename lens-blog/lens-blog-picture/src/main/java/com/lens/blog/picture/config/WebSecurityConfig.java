@@ -42,6 +42,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/v3/api-docs",
                         "/webjars/**",
                         "/actuator/**",
+                        // add file upload path
+                        "/files/**",
                         "/druid/**"
                 ).permitAll()
                 // 对于获取token的rest api要允许匿名访问
