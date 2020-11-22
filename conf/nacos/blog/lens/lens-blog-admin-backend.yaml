@@ -6,9 +6,14 @@ templateCode: SMS_XXXXXX #短信模板编号
 signName: 麻辣博客
 #项目名称
 PROJECT_NAME: 麻辣博客
+
+file:
+  upload:
+    path: ${user.home}/containers/${spring.application.name}/data/files
 # 邮箱验证
-lensBlog:
+lensBlog:  
   email: lensson_chen@sina.com
+
 # 蘑菇博客登录默认密码
 DEFAULE_PWD: lens
 
@@ -22,6 +27,7 @@ BLOG:
   THIRD_COUNT: 3 #三级推荐
   FOURTH_COUNT: 5 #四级推荐
 
+#spring
 spring:
   jackson:
     serialization:
@@ -54,7 +60,7 @@ spring:
   datasource:
     username: lens
     password: lens
-    url: jdbc:mysql://${lens-db:localhost}:33306/lens_blog?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://${lens-mariadb:localhost}:33306/lens_blog?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     # 初始化大小，最小，最大
@@ -151,4 +157,4 @@ audience:
   base64Secret: MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY=
   name: lensblog
   expiresSecond: 3600  #1个小时 3600
-  refreshSecond: 300 # 刷新token的时间 5分钟        
+  refreshSecond: 300 # 刷新token的时间 5分钟

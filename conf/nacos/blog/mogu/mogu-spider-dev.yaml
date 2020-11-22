@@ -1,44 +1,33 @@
 #app
 server:
-  port: 9012
-
-file:
-  upload:
-    path: ${user.home}/containers/${spring.application.name}/data/files
+  port: 8608
 
 #spring
 spring:
-  servlet:
-    multipart:
-      enabled: true
-      max-file-size: 100MB # 修改单次文件上传文件大小不能超过100MB
-      max-request-size: 500MB # 设置单次文件请求总大小不能超过500MB
-
   jmx:
-    default-domain: lens_blog_picture
+    default-domain: mogu_spider
   thymeleaf:
     cache: true   #关闭缓存
   application:
-    name: lens-blog-picture
+    name: mogu-spider
   security:
     user:
-      name: lens
-      password: lens
+      name: user
+      password: password123
   boot:
     admin:
       client:
         enabled: true
-        url: http://${lens-blog-monitor:localhost}:9020
-        username: lens
-        password: lens
+        url: http://localhost:8606
+        username: user
+        password: password123
         instance:
-          service-base-url: http://${lens-blog-picture:localhost}:9012
+          service-base-url: http://localhost:8608
 
   #redis
   redis:
-    host: ${lens-redis:localhost} #redis的主机ip
+    host: 127.0.0.1 #redis的主机ip
     port: 6379
-    #password: mogu2018  # 客户端没有设置密码，服务器中redis默认密码为 mogu2018
 
   # sleuth 配置
   sleuth:
@@ -49,13 +38,13 @@ spring:
       probability: 1.0 # 采样比例为: 0.1(即10%),设置的值介于0.0到1.0之间，1.0则表示全部采集。
   # zipkin 配置
   zipkin:
-    base-url: http://${lens-zipkin:localhost}:9411  # 指定了Zipkin服务器的地址
+    base-url: http://localhost:9411  # 指定了Zipkin服务器的地址
 
   # DATABASE CONFIG
   datasource:
-    username: lens
-    password: lens
-    url: jdbc:mysql://${lens-mariadb:localhost}:33306/lens_blog_picture?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/mogu_blog?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
@@ -75,10 +64,20 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
-  mvc:
-    static-path-pattern: /upload/**
-  resources:
-    static-locations: classpath:/static/upload
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 5
+    appname: mogu-spider
 
 management:
   endpoints:
@@ -93,7 +92,7 @@ management:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.lens.blog.picture.entity
+  typeAliasesPackage: com.moxi.mogublog.spider.entity
   global-config:
     # 数据库相关配置
     db-config:
