@@ -53,6 +53,9 @@
         <jaxb.version>2.3.0</jaxb.version>
         <minio.version>7.1.4</minio.version>
         <spring.mock.version>2.0.8</spring.mock.version>
+
+        <docker.image.prefix>lensson</docker.image.prefix>
+        <dockerfile.maven.version>1.4.10</dockerfile.maven.version>
     </properties>
 
     <modules>
