@@ -19,12 +19,17 @@ spring:
       repositories:
       enabled: true
 
+  #redis
+  redis:
+    host: ${lens-redis:localhost} #redis的主机ip
+    port: 6379
+
   rabbitmq:
     host: ${lens-rabbitmq:localhost} #rabbitmq的主机ip
     port: 5672
     username: lens
     password: lens
-    
+
   boot:
     admin:
       client:
