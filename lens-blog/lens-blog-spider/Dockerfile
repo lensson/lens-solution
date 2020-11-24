@@ -9,4 +9,4 @@ ENV DATAPATH /data
 VOLUME $DATAPATH
 #
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/opt/app.jar"]
-EXPOSE 9014
+EXPOSE 9011

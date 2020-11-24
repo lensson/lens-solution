@@ -4,10 +4,10 @@ module.exports = {
   //配置线上环境
 
   // 如果没有域名使用这个
-  //VUE_MOGU_WEB: '"http://47.115.54.30:8602"',
+  //VUE_MOGU_WEB: '"http://172.17.0.1:8001"',
   // 如果有域名使用这个
-  VUE_MOGU_WEB: '"http://demoweb.moguit.cn"',
-  PICTURE_API: '"http://47.115.54.30:8602"',
-  WEB_API: '"http://47.115.54.30:8603"',
-  ELASTICSEARCH: '"http://47.115.54.30:8605"',
+  VUE_MOGU_WEB: '"http://www.malakj.com"',
+  PICTURE_API: '"http://172.17.0.1:9012"',
+  WEB_API: '"http://172.17.0.1:9001"',
+  ELASTICSEARCH: '"http://172.17.0.1:9200"',
 }
