@@ -1,6 +1,6 @@
 {
-  "name": "lens-blog-admin-vue-frontend",
-  "version": "0.1.0",
+  "name": "vue-admin-template",
+  "version": "3.8.0",
   "license": "MIT",
   "description": "A vue admin template with Element UI & axios & iconfont & permission control & lint",
   "author": "Pan <panfree23@gmail.com>",
@@ -20,7 +20,6 @@
     "echarts": "^4.2.1",
     "element-ui": "^2.13.1",
     "file-saver": "^2.0.2",
-    "hash-sum": "^2.0.0",
     "js-beautify": "^1.11.0",
     "js-cookie": "2.2.0",
     "less-loader": "^4.1.0",

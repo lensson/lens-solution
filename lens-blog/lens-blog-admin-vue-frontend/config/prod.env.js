@@ -13,9 +13,9 @@ module.exports = {
   ELASTIC_SEARCH: '"http://172.17.0.1:5601"',
   EUREKA_API: '"http://172.17.0.1:8761"',
   RABBIT_MQ_ADMIN: '"http://172.17.0.1:15672"',
-  DRUID_ADMIN: '"http://172.17.0.1:9001/druid/login.html"',
+  DRUID_ADMIN: '"http://172.17.0.1:9002/druid/login.html"',
   // 有域名
-  BLOG_WEB_URL: '"http://172.17.0.1:8001"',
+  BLOG_WEB_URL: '"http://www.malakj.com"',
   // 没有域名
   // BLOG_WEB_URL: '"http://172.17.0.1:9527"',
 }

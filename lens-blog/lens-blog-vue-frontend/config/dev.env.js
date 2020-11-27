@@ -9,5 +9,5 @@ module.exports = merge(prodEnv, {
   PICTURE_API: '"http://172.17.0.1:9012"',
 	WEB_API: '"http://172.17.0.1:9001"',
 	ELASTICSEARCH: '"http://172.17.0.1:9200"',
-
+  
 })

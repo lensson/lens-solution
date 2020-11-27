@@ -1,8 +1,8 @@
 {
-  "name": "lens_blog",
+  "name": "mogu_blog",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Lens <67949049@qq.com>",
+  "author": "陌溪_ <xzx19950624@qq.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
