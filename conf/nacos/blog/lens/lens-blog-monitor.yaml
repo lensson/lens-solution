@@ -19,6 +19,9 @@ spring:
           # 服务上下线会自动发送邮件
           #from: lensson_chen@sina.com
           #to: lensson_chen@sina.com
+  redis:
+    host: ${lens-redis:localhost} #redis的主机ip
+    port: 6379
 
   #mail
   mail:
