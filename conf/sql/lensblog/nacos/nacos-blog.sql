@@ -664,7 +664,7 @@ spring:
   data:
     elasticsearch:
       cluster-name: elasticsearch
-      cluster-nodes: ${elasticsearch:localhost}:9300
+      cluster-nodes: ${lens-elasticsearch:localhost}:9200
     solr:
       host: http://${lens-solr:localhost}:8983/solr
       core: collection1
@@ -688,8 +688,8 @@ spring:
         url: http://${lens-blog-monitor:localhost}:9020
         username: lens
         password: lens
-      instance:
-        service-base-url: http://${lens-blog-search:localhost}:9013
+        instance:
+          service-base-url: http://${lens-blog-search:localhost}:9013
 
   # sleuth 配置
   sleuth:
@@ -711,7 +711,7 @@ management:
         include: "*"
   endpoint:
     health:
-      show-details: always', 'a54611a0691d1cfc8846ebcef1547d16', '2020-11-16 08:39:10', '2020-11-23 05:26:09', null, '172.24.0.1', '', '', '', '', '', 'yaml', '');
+      show-details: always', '8a169096cacc07796a3c55bf9c7a2391', '2020-11-16 08:39:10', '2020-11-30 05:27:04', null, '10.243.26.25', '', '', '', '', '', 'yaml', '');
 INSERT INTO nacos.config_info (id, data_id, group_id, content, md5, gmt_create, gmt_modified, src_user, src_ip, app_name, tenant_id, c_desc, c_use, effect, type, c_schema) VALUES (146, 'lens-blog-spider.yaml', 'DEFAULT_GROUP', '#app
 server:
   port: 9014
