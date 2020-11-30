@@ -68,7 +68,7 @@ file:
   upload:
     path: ${user.home}/containers/${spring.application.name}/data/files
 # 邮箱验证
-lensBlog:
+lensBlog:  
   email: lensson_chen@sina.com
 
 # 蘑菇博客登录默认密码
@@ -464,7 +464,7 @@ spring:
           starttls:
             enable: false
           timeout: 600000
-          connectiontimeout: 600000
+          connectiontimeout: 600000  
   boot:
     admin:
       client:
@@ -551,7 +551,7 @@ spring:
   datasource:
     username: lens
     password: lens
-    url: jdbc:mysql://${lens-db:localhost}:33306/lens_blog_picture?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://${lens-mariadb:localhost}:33306/lens_blog_picture?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
@@ -610,7 +610,7 @@ mybatis-plus:
   # 原生配置
   configuration:
     map-underscore-to-camel-case: true
-    cache-enabled: false', '443527e4703807fdebf92a3bd62447bf', '2020-11-13 08:17:49', '2020-11-20 07:00:25', null, '172.21.0.1', '', '', '', '', '', 'yaml', '');
+    cache-enabled: false', '4e172528fe7a7e8e2bf4bf45d086ea83', '2020-11-13 08:17:49', '2020-11-23 02:29:03', null, '172.24.0.1', '', '', '', '', '', 'yaml', '');
 INSERT INTO nacos.config_info (id, data_id, group_id, content, md5, gmt_create, gmt_modified, src_user, src_ip, app_name, tenant_id, c_desc, c_use, effect, type, c_schema) VALUES (111, 'lens-blog-monitor.yaml', 'DEFAULT_GROUP', 'server:
   port: 9020
 
@@ -632,7 +632,10 @@ spring:
           # 服务上下线会自动发送邮件
           #from: lensson_chen@sina.com
           #to: lensson_chen@sina.com
-
+  redis:
+    host: ${lens-redis:localhost} #redis的主机ip
+    port: 6379
+    
   #mail
   mail:
     username: lensson_chen@sina.com
@@ -646,7 +649,7 @@ spring:
             enable: true
             required: true
           ssl:
-            enable: true', '4e4c9a7524f1ab2f35d80e16ae9ca1a4', '2020-11-16 02:09:58', '2020-11-18 00:53:16', null, '172.21.0.1', '', '', '', '', '', 'yaml', '');
+            enable: true', '8def38472f879e2fa344e11351aff068', '2020-11-16 02:09:58', '2020-11-23 05:26:34', null, '172.24.0.1', '', '', '', '', '', 'yaml', '');
 INSERT INTO nacos.config_info (id, data_id, group_id, content, md5, gmt_create, gmt_modified, src_user, src_ip, app_name, tenant_id, c_desc, c_use, effect, type, c_schema) VALUES (124, 'lens-blog-search.yaml', 'DEFAULT_GROUP', 'server:
   port: 9013
 spring:
@@ -668,12 +671,16 @@ spring:
       repositories:
       enabled: true
 
+  redis:
+    host: ${lens-redis:localhost} #redis的主机ip
+    port: 6379
+
   rabbitmq:
     host: ${lens-rabbitmq:localhost} #rabbitmq的主机ip
     port: 5672
     username: lens
     password: lens
-
+    
   boot:
     admin:
       client:
@@ -704,7 +711,7 @@ management:
         include: "*"
   endpoint:
     health:
-      show-details: always', '2f8c15be848ed8464af6d5b4a5661b22', '2020-11-16 08:39:10', '2020-11-18 03:05:36', null, '172.21.0.1', '', '', '', '', '', 'yaml', '');
+      show-details: always', 'a54611a0691d1cfc8846ebcef1547d16', '2020-11-16 08:39:10', '2020-11-23 05:26:09', null, '172.24.0.1', '', '', '', '', '', 'yaml', '');
 INSERT INTO nacos.config_info (id, data_id, group_id, content, md5, gmt_create, gmt_modified, src_user, src_ip, app_name, tenant_id, c_desc, c_use, effect, type, c_schema) VALUES (146, 'lens-blog-spider.yaml', 'DEFAULT_GROUP', '#app
 server:
   port: 9014

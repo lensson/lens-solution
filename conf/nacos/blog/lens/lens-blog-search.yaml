@@ -12,7 +12,7 @@ spring:
   data:
     elasticsearch:
       cluster-name: elasticsearch
-      cluster-nodes: ${elasticsearch:localhost}:9300
+      cluster-nodes: ${lens-elasticsearch:localhost}:9200
     solr:
       host: http://${lens-solr:localhost}:8983/solr
       core: collection1
@@ -37,8 +37,8 @@ spring:
         url: http://${lens-blog-monitor:localhost}:9020
         username: lens
         password: lens
-      instance:
-        service-base-url: http://${lens-blog-search:localhost}:9013
+        instance:
+          service-base-url: http://${lens-blog-search:localhost}:9013
 
   # sleuth 配置
   sleuth:
