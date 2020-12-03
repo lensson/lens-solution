@@ -4,7 +4,7 @@ spring:
   application:
     name: lens-blog-picture
   cloud:
-    lens-nacos:
+    nacos:
       discovery:
         server-addr: ${lens-nacos:localhost}:8848
         metadata:
