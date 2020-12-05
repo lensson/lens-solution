@@ -10,7 +10,43 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api/v1/blog/web/**': {
+        target: 'http://localhost:9001',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api/v1/blog/web': ''
+        }
+      },
+      '/api/v1/blog/admin/**': {
+        target: 'http://localhost:9002',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api/v1/blog/admin': ''
+        }
+      },
+      '/api/v1/blog/sms/**': {
+        target: 'http://localhost:9011',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api/v1/blog/sms': ''
+        }
+      },
+      '/api/v1/blog/file/**': {
+        target: 'http://localhost:9012',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api/v1/blog/file': ''
+        }
+      },
+      '/api/v1/blog/search/**': {
+        target: 'http://localhost:9013',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api/v1/blog/search': ''
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

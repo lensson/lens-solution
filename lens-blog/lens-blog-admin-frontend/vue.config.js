@@ -5,6 +5,8 @@
 // }
 
 const vueConfig = {
+  publicPath: 'public',
+
   devServer: {
     port: 8002
   },

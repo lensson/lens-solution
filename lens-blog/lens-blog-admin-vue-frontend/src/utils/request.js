@@ -6,7 +6,7 @@ import { getToken } from '@/utils/auth'
 // 创建axios实例
 const service = axios.create({
   baseURL: '', // api 的 base_url
-  withCredentials: true, //允许后台的cookie传递到前端
+  withCredentials: true, // 允许后台的cookie传递到前端
   timeout: 100000 // 请求超时时间
 })
 
@@ -14,8 +14,8 @@ const service = axios.create({
 service.defaults.headers.common['Authorization'] = getToken()
 
 // 请求计数器
-var requestNum = 0;
-var loading = null;
+let requestNum = 0
+let loading = null
 
 // request拦截器
 service.interceptors.request.use(
@@ -26,12 +26,12 @@ service.interceptors.request.use(
     }
 
     // 请求加1
-    requestNum ++;
+    requestNum++
 
-    if(loading == null) {
-      loading = Loading.service({ fullscreen: true, text:'正在努力加载中~' });
+    if (loading == null) {
+      loading = Loading.service({ fullscreen: true, text: '正在努力加载中~' })
     } else if (loading != null && requestNum > 0) {
-      loading = Loading.service({ fullscreen: true, text:'正在努力加载中~' });
+      loading = Loading.service({ fullscreen: true, text: '正在努力加载中~' })
     }
 
     return config
@@ -42,8 +42,8 @@ service.interceptors.request.use(
     Promise.reject(error)
     // 出错了直接关闭loading
     requestNum = 0
-    if(loading) {
-      loading.close();
+    if (loading) {
+      loading.close()
     }
   }
 )
@@ -56,7 +56,7 @@ service.interceptors.response.use(
      */
     const res = response.data
     // 请求数减1
-    requestNum --;
+    requestNum--
     if (loading == null || requestNum <= 0) {
       loading.close()
     }
@@ -66,8 +66,8 @@ service.interceptors.response.use(
     } else {
       // 出错了直接关闭loading
       requestNum = 0
-      loading.close();
-      if(res.code === 401) {
+      loading.close()
+      if (res.code === 401) {
         MessageBox.confirm(
           'token已过期，可以取消继续留在该页面，或者重新登录',
           '确定登出',
@@ -82,7 +82,7 @@ service.interceptors.response.use(
           })
         })
         return Promise.reject('error')
-      }else if(res.code === 402){
+      } else if (res.code === 402) {
         // 接口没有权限访问时
         Message({
           message: res.data,
@@ -91,7 +91,7 @@ service.interceptors.response.use(
         })
         return Promise.reject('error')
       } else {
-        console.log("错误信息", res)
+        console.log('错误信息', res)
         Message({
           message: res.message,
           type: 'error',
@@ -105,7 +105,7 @@ service.interceptors.response.use(
     console.log('错误码', error)
     // 出错了直接关闭loading
     requestNum = 0
-    loading.close();
+    loading.close()
     Message({
       message: error,
       type: 'error',
