@@ -20,7 +20,7 @@ INSERT INTO nacos.config_info (id, data_id, group_id, content, md5, gmt_create, 
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: ''http://${lens-auth:localhost}:8850/rsa/publicKey''
+          jwk-set-uri: ''http://localhost:8850/rsa/publicKey''
   redis:
     database: 0
     host: ${lens-redis:localhost}
@@ -44,17 +44,43 @@ INSERT INTO nacos.config_info (id, data_id, group_id, content, md5, gmt_create, 
             - Path=/api/v1/auth/**
           filters:
             - StripPrefix=3
+        - id: lens-blog-admin-backend
+          uri: lb://lens-blog-admin-backend
+          predicates:
+            - Path=/api/v1/blog/admin/**
+          filters:
+            - StripPrefix=4
+        - id: lens-blog-backend
+          uri: lb://lens-blog-backend
+          predicates:
+            - Path=/api/v1/blog/web/**
+          filters:
+            - StripPrefix=4
+        - id: lens-blog-picture
+          uri: lb://lens-blog-picture
+          predicates:
+            - Path=/api/v1/blog/picture/**
+          filters:
+            - StripPrefix=4
+        - id: lens-blog-search
+          uri: lb://lens-blog-search
+          predicates:
+            - Path=/api/v1/blog/search/**
+          filters:
+            - StripPrefix=4
 secure:
   ignore:
     urls:
       - "/actuator/**"
       - "/api/v1/auth/oauth/token"
+      - "/api/v1/blog/admin/**"
+      - "/api/v1/blog/web/**"
 
 # 日志配置
 logging:
   level:
     com.lens: debug
-    org.springframework: info', 'b7cc412b7df0a824baa903eb68f3b3f1', '2020-11-09 05:04:34', '2020-11-20 07:38:06', null, '172.21.0.1', '', '', '', '', '', 'yaml', '');
+    org.springframework: debug', '98e96d413366a5867cda0a459ef63eb2', '2020-11-09 05:04:34', '2020-12-07 09:03:05', null, '172.28.0.1', '', '', '', '', '', 'yaml', '');
 INSERT INTO nacos.config_info (id, data_id, group_id, content, md5, gmt_create, gmt_modified, src_user, src_ip, app_name, tenant_id, c_desc, c_use, effect, type, c_schema) VALUES (79, 'lens-blog-admin-backend.yaml', 'DEFAULT_GROUP', 'server:
   port: 9002
 
@@ -68,7 +94,7 @@ file:
   upload:
     path: ${user.home}/containers/${spring.application.name}/data/files
 # 邮箱验证
-lensBlog:  
+lensBlog:
   email: lensson_chen@sina.com
 
 # 蘑菇博客登录默认密码
@@ -464,7 +490,7 @@ spring:
           starttls:
             enable: false
           timeout: 600000
-          connectiontimeout: 600000  
+          connectiontimeout: 600000
   boot:
     admin:
       client:
@@ -635,7 +661,7 @@ spring:
   redis:
     host: ${lens-redis:localhost} #redis的主机ip
     port: 6379
-    
+
   #mail
   mail:
     username: lensson_chen@sina.com
@@ -680,7 +706,7 @@ spring:
     port: 5672
     username: lens
     password: lens
-    
+
   boot:
     admin:
       client:
