@@ -4,7 +4,7 @@ spring:
   redis:
     database: 0
     port: 6379
-    host: localhost
+    host: ${lens-redis:localhost}
 management:
   endpoints:
     web:

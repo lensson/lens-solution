@@ -11,14 +11,11 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api/v1/blog/web/**': {
-        target: 'http://localhost:9001',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api/v1/blog/web': ''
-        }
+        target: 'http://localhost:8849',
+        changeOrigin: true
       },
       '/api/v1/blog/admin/**': {
-        target: 'http://localhost:9002',
+        target: 'http://localhost:8849',
         changeOrigin: true,
         pathRewrite: {
           '^/api/v1/blog/admin': ''
