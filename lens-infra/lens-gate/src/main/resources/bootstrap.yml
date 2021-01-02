@@ -1,0 +1,15 @@
+server:
+  port: 8851
+
+spring:
+  application:
+    name: lens-gate
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos:localhost}:8848
+        metadata:
+          VERSION: 1.0
+      config:
+        server-addr: ${nacos:localhost}:8848
+        file-extension: yaml
