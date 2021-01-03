@@ -11,6 +11,7 @@
     <modules>
         <module>lens-gateway</module>
         <module>lens-auth</module>
+        <module>lens-gate</module>
     </modules>
 
     <properties>

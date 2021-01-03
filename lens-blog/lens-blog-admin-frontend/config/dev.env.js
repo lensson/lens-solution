@@ -7,7 +7,7 @@ module.exports = merge(prodEnv, {
 
   //开发环境
   FILE_API: '"http://172.28.0.1:9012/"',
-  ADMIN_API: '"http://172.28.0.1:9002"',
+  ADMIN_API: '"http://172.28.0.1:8849/api/v1/blog/admin"',
   PICTURE_API: '"http://172.28.0.1:9012"',
   WEB_API: '"http://172.28.0.1:9001"',
   Search_API: '"http://172.28.0.1:9013"',
