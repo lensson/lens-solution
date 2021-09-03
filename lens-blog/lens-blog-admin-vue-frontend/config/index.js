@@ -11,32 +11,29 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api/v1/blog/web/**': {
-        target: 'http://localhost:8849',
+        target: 'http://172.28.0.1:8851',
         changeOrigin: true
       },
       '/api/v1/blog/admin/**': {
-        target: 'http://localhost:8849',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api/v1/blog/admin': ''
-        }
+        target: 'http://172.28.0.1:8851',
+        changeOrigin: true
       },
       '/api/v1/blog/sms/**': {
-        target: 'http://localhost:9011',
+        target: 'http://172.28.0.1:9011',
         changeOrigin: true,
         pathRewrite: {
           '^/api/v1/blog/sms': ''
         }
       },
       '/api/v1/blog/file/**': {
-        target: 'http://localhost:9012',
+        target: 'http://172.28.0.1:9012',
         changeOrigin: true,
         pathRewrite: {
           '^/api/v1/blog/file': ''
         }
       },
       '/api/v1/blog/search/**': {
-        target: 'http://localhost:9013',
+        target: 'http://172.28.0.1:9013',
         changeOrigin: true,
         pathRewrite: {
           '^/api/v1/blog/search': ''

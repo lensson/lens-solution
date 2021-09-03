@@ -3,9 +3,9 @@ module.exports = {
   NODE_ENV: '"production"',
 
   //生产环境
-  ADMIN_API: '"http://106.75.6.129:9002"',
-  PICTURE_API: '"http://106.75.6.129:9012"',
-  WEB_API: '"http://106.75.6.129:9001"',
+  ADMIN_API: '"https://www.malakj.com"',
+  PICTURE_API: '"https://www.malakj.com"',
+  WEB_API: '"https://www.malakj.com"',
   Search_API: '"http://106.75.6.129:9013"',
   SPRING_BOOT_ADMIN: '"http://106.75.6.129:9020/wallboard"',
   SOLR_API: '"http://106.75.6.129:8983/solr"',

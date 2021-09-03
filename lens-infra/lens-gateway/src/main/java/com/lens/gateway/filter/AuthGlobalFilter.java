@@ -28,6 +28,9 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
         if (StrUtil.isEmpty(token)) {
             return chain.filter(exchange);
         }
+//        if(exchange.getRequest().getURI().getPath().startsWith(BLOG_ROOT_URL)){
+//            return chain.filter(exchange);
+//        }
         try {
             //从token中解析用户信息并设置到Header中去
             String realToken = token.replace("Bearer ", "");

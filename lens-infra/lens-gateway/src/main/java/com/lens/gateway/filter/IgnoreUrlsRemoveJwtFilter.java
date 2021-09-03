@@ -15,6 +15,8 @@ import reactor.core.publisher.Mono;
 import java.net.URI;
 import java.util.List;
 
+import static com.lens.gateway.common.AuthConstant.BLOG_ROOT_URL;
+
 /**
  * 白名单路径访问时需要移除JWT请求头
  */
@@ -26,11 +28,12 @@ public class IgnoreUrlsRemoveJwtFilter implements WebFilter {
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
         URI uri = request.getURI();
+
         PathMatcher pathMatcher = new AntPathMatcher();
         //白名单路径移除JWT请求头
         List<String> ignoreUrls = ignoreUrlsConfig.getUrls();
         for (String ignoreUrl : ignoreUrls) {
-            if (pathMatcher.match(ignoreUrl, uri.getPath())) {
+            if (pathMatcher.match(ignoreUrl, uri.getPath()) && !ignoreUrl.startsWith(BLOG_ROOT_URL)) {
                 request = exchange.getRequest().mutate().header("Authorization", "").build();
                 exchange = exchange.mutate().request(request).build();
                 return chain.filter(exchange);
