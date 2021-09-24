@@ -1,0 +1,8 @@
+# Referenced at /home/zhenac/myprojects/lens_flutter_blog/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:22
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at /home/zhenac/myprojects/lens_flutter_blog/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:27
+-keep class com.example.lens_flutter_blog.MainActivity { <init>(); }
+# Referenced at /home/zhenac/myprojects/lens_flutter_blog/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:22
+-keep class io.flutter.app.FlutterApplication { <init>(); }
+# Referenced at /home/zhenac/myprojects/lens_flutter_blog/build/app/intermediates/merged_manifests/release/AndroidManifest.xml:69
+-keep class io.flutter.plugins.urllauncher.WebViewActivity { <init>(); }
