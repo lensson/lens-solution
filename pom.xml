@@ -74,6 +74,9 @@
     </properties>
 
     <modules>
+        <!-- plumemo -->
+        <module>lens-plumemo</module>
+
         <!-- common -->
         <module>lens-common</module>
 
