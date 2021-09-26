@@ -2,7 +2,7 @@
 //    'http://10.182.103.76:9000/api/blog';
 
 final String BASE_REST_URL =
-    'https://plumemo.malakj.com/api/blog';
+    'https://admin.plumemo.malakj.com/api/blog';
 
 final String GET_CATEGORY_LIST_URI = '/category/category/v1/list';
 final String GET_POST_LIST_URI = '/posts/posts/v1/list';

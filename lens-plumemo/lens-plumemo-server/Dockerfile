@@ -5,10 +5,9 @@ WORKDIR /
 ADD . .
 
 RUN pwd
-RUN ls -l
+RUN ls -al
 
 ENV MAVEN_VERSION=3.6.3
-
 
 WORKDIR /usr/local/maven
 
@@ -16,7 +15,7 @@ RUN tar -zxvf apache-maven-${MAVEN_VERSION}-bin.tar.gz && \
     rm -fr apache-maven-${MAVEN_VERSION}-bin.tar.gz
 
 #对外暴漏的端口号
-EXPOSE 8086
+EXPOSE 9000
 
 WORKDIR /
 

@@ -164,9 +164,10 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.2.2</version>
                 <configuration>
-                    <imageName>lens-plumemo-server</imageName>
+                    <imageName>lensson/lens-plumemo-server</imageName>
                     <dockerDirectory>./</dockerDirectory>
                     <forceTags>true</forceTags>
+                    <network>solution_backnet</network>
                 </configuration>
             </plugin>
         </plugins>
