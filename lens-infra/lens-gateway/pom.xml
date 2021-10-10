@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>lens-gateway</artifactId>
-
+	<name>lens-infra/lens-gateway</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

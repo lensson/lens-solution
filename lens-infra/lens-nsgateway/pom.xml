@@ -8,9 +8,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>lens-gate</artifactId>
-	<name>lens-infra/lens-gate</name>
-	<description>Lens Gate without Auth</description>
+	<artifactId>lens-nsgateway</artifactId>
+	<name>lens-infra/lens-nsgateway</name>
+	<description>Lens Gateway without Auth</description>
 
 	<dependencies>
 		<dependency>
