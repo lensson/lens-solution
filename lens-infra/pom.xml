@@ -13,7 +13,7 @@
         <module>lens-nsgateway</module>
         <module>lens-gateway</module>
         <module>lens-auth</module>
-        <module>lens-gate</module>
+        <module>lens-nsgateway</module>
     </modules>
 
     <properties>

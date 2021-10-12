@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: lens-nsgateway
+    name: lens-gate
   cloud:
     nacos:
       discovery:
