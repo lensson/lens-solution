@@ -15,7 +15,7 @@ module.exports = {
   RABBIT_MQ_ADMIN: '"https://malakj.com/rabbit"',
   DRUID_ADMIN: '"https://druid.malakj.com/druid/login.html"',
   // 有域名
-  BLOG_WEB_URL: '"http://blog.malakj.com"',
+  BLOG_WEB_URL: '"https://blog.malakj.com"',
   // 没有域名
   // BLOG_WEB_URL: '"http://106.75.6.129:9527"',
 }
