@@ -4,9 +4,9 @@ module.exports = {
 
   //生产环境
   ADMIN_API: '"/api/v1/blog/admin"',
-  PICTURE_API: '"https://blog.malakj.com/api/v1/blog/picture"',
+  PICTURE_API: '"/api/v1/blog/picture"',
   WEB_API: '"https://blog.malakj.com/api/v1/blog/web"',
-  Search_API: '"https://blog.malakj.com/api/v1/blog/search"',
+  Search_API: '"/api/v1/blog/search"',
   SPRING_BOOT_ADMIN: '"https://blog.malakj.com/wallboard"',
   SOLR_API: '"https://malakj.com/solr"',
   Zipkin_Admin: '"https://malakj.com/zipkin"',
