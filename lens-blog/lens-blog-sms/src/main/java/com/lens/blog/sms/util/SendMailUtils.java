@@ -40,7 +40,7 @@ public class SendMailUtils {
             //multipart:true
             MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
 
-            helper.setSubject("蘑菇博客");
+            helper.setSubject("麻辣博客");
 
             helper.setText(text, true);
             //邮件接收人

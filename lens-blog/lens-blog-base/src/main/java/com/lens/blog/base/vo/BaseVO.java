@@ -9,7 +9,7 @@ import lombok.Data;
 /**
  * BaseVO   view object 表现层 基类对象
  *
- * @author: 陌溪
+ * @author: Lens
  * @create: 2019-12-03-22:38
  */
 @Data

@@ -41,7 +41,7 @@ import java.util.concurrent.TimeUnit;
  * 用户登录RestApi，系统自带的登录注册功能
  * 第三方登录请移步AuthRestApi
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年5月6日17:50:23
  */
 @RestController
@@ -143,7 +143,7 @@ public class LoginRestApi {
         user.setNickName(userVO.getNickName());
         user.setPassWord(MD5Utils.string2MD5(userVO.getPassWord()));
         user.setEmail(userVO.getEmail());
-        // 设置账号来源，蘑菇博客
+        // 设置账号来源，麻辣博客
         user.setSource(SysConf.MOGU);
         user.setLastLoginIp(ip);
         user.setBrowser(map.get(SysConf.BROWSER));

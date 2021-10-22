@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * 本地对象存储服务 Minio文件上传实现类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年10月19日11:13:21
  */
 @Service

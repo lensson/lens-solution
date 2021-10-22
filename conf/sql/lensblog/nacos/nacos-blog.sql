@@ -97,7 +97,7 @@ file:
 lensBlog:
   email: lensson_chen@sina.com
 
-# 蘑菇博客登录默认密码
+# 麻辣博客登录默认密码
 DEFAULE_PWD: lens
 
 
@@ -264,7 +264,7 @@ file:
   upload:
     path: ${user.home}/containers/${spring.application.name}/data/files
 
-# 蘑菇博客登录默认密码
+# 麻辣博客登录默认密码
 DEFAULE_PWD: lens
 
 #请求限制参数
@@ -285,7 +285,7 @@ BLOG:
   FOURTH_COUNT: 5 #四级推荐
   USER_TOKEN_SURVIVAL_TIME: 168 # toekn令牌存活时间, 7天  168 = 7*24
   # 原创模板
-  ORIGINAL_TEMPLATE: 本文为蘑菇博客原创文章，转载无需和我联系，但请注明来自蘑菇博客 http://www.moguit.cn
+  ORIGINAL_TEMPLATE: 本文为麻辣博客原创文章，转载无需和我联系，但请注明来自麻辣博客 http://www.moguit.cn
   # 转载模板
   REPRINTED_TEMPLATE: 本着开源共享、共同学习的精神，本文转载自 %S ，版权归 %S 所有，如果侵权之处，请联系博主进行删除，谢谢~
 spring:

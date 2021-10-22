@@ -8,7 +8,7 @@ import com.lens.blog.base.service.SuperService;
 /**
  * 图片分类表 服务类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2018-09-04
  */
 public interface PictureSortService extends SuperService<PictureSort> {

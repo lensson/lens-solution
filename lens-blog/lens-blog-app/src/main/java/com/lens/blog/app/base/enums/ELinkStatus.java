@@ -3,7 +3,7 @@ package com.lens.blog.app.base.enums;
 /**
  * 友链状态枚举类
  *
- * @Author: 陌溪
+ * @Author: Lens
  * @Date: 2020年3月15日09:00:34
  */
 public class ELinkStatus {

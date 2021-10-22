@@ -14,7 +14,7 @@ file:
 lensBlog:  
   email: lensson_chen@sina.com
 
-# 蘑菇博客登录默认密码
+# 麻辣博客登录默认密码
 DEFAULE_PWD: lens
 
 

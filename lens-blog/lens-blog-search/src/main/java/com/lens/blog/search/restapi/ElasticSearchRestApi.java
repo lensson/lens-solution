@@ -25,7 +25,7 @@ package com.lens.blog.search.restapi;//package com.lens.blog.search.restapi;
 ///**
 // * ElasticSearch RestAPI
 // *
-// * @author: 陌溪
+// * @author: Lens
 // * @create: 2020年1月15日16:26:16
 // */
 //@RequestMapping("/search")

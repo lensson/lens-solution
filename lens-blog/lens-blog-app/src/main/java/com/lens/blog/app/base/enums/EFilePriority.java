@@ -3,7 +3,7 @@ package com.lens.blog.app.base.enums;
 /**
  * 文件显示优先级 枚举类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年4月7日16:42:29
  */
 public class EFilePriority {

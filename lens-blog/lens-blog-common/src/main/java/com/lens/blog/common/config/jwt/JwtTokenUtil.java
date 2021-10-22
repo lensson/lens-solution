@@ -20,7 +20,7 @@ import java.util.Date;
 /**
  * JWT工具类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020/6/1 18:18
  */
 @Component

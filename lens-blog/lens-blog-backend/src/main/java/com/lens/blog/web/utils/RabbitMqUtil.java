@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * 用于RabbitMQ发送消息
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年4月29日11:56:10
  */
 @Slf4j
@@ -127,7 +127,7 @@ public class RabbitMqUtil {
                         "</div>\r\n" +
                         "<div class=\"panel\" style=\"background-color: rgb(246, 244, 236);\">\r\n" +
                         "<div class=\"panel-header\" style=\"background-color: rgb(246, 244, 236);\">\r\n" +
-                        "蘑菇博客邮件提醒\r\n" +
+                        "麻辣博客邮件提醒\r\n" +
                         "\r\n" +
                         "</div>\r\n" +
                         "<div class=\"panel-body\">\r\n" +
@@ -173,12 +173,12 @@ public class RabbitMqUtil {
                         "</div>\r\n" +
                         "<div class=\"panel\" style=\"background-color: rgb(246, 244, 236);\">\r\n" +
                         "<div class=\"panel-header\" style=\"background-color: rgb(246, 244, 236);\">\r\n" +
-                        "蘑菇博客账号激活\r\n" +
+                        "麻辣博客账号激活\r\n" +
                         "\r\n" +
                         "</div>\r\n" +
                         "<div class=\"panel-body\">\r\n" +
                         "<p>您好 <a href=\"mailto:" + user.getEmail() + "\" rel=\"noopener\" target=\"_blank\">" + user.getNickName() + "<wbr></a>！</p>\r\n" +
-                        "<p>欢迎您注册蘑菇博客账号，请点击下方链接进行账号激活</p>\r\n" +
+                        "<p>欢迎您注册麻辣博客账号，请点击下方链接进行账号激活</p>\r\n" +
                         "<p>地址：" + "<a href=\"" + dataWebUrl + "/login/activeUser/" + token + "\">点击这里</a>" + "</p>\r\n" +
                         "\r\n" +
                         "</div>\r\n" +
@@ -222,12 +222,12 @@ public class RabbitMqUtil {
                         "</div>\r\n" +
                         "<div class=\"panel\" style=\"background-color: rgb(246, 244, 236);\">\r\n" +
                         "<div class=\"panel-header\" style=\"background-color: rgb(246, 244, 236);\">\r\n" +
-                        "蘑菇博客邮箱绑定\r\n" +
+                        "麻辣博客邮箱绑定\r\n" +
                         "\r\n" +
                         "</div>\r\n" +
                         "<div class=\"panel-body\">\r\n" +
                         "<p>您好 <a href=\"mailto:" + user.getEmail() + "\" rel=\"noopener\" target=\"_blank\">" + user.getNickName() + "<wbr></a>！</p>\r\n" +
-                        "<p>欢迎您给蘑菇博客账号绑定邮箱，请点击下方链接进行绑定</p>\r\n" +
+                        "<p>欢迎您给麻辣博客账号绑定邮箱，请点击下方链接进行绑定</p>\r\n" +
                         "<p>地址：" + "<a href=\"" + dataWebUrl + "/oauth/bindUserEmail/" + token + "/" + user.getValidCode() + "\">点击这里</a>" + "</p>\r\n" +
                         "\r\n" +
                         "</div>\r\n" +

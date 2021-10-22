@@ -3,7 +3,7 @@ package com.lens.blog.app.base.enums;
 /**
  * 网站登录方式枚举类
  *
- * @Author: 陌溪
+ * @Author: Lens
  * @Date: 2020年10月14日11:10:04
  */
 public enum ELoginType {

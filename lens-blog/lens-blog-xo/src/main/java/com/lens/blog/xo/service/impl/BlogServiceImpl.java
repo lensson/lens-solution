@@ -41,7 +41,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 博客表 服务实现类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2018-09-08
  */
 @Service

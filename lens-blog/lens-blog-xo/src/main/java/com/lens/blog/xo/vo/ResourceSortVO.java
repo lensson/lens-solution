@@ -11,7 +11,7 @@ import lombok.ToString;
 /**
  * ResourceSortVO
  *
- * @author: 陌溪
+ * @author: Lens
  * @create: 2020年1月9日19:09:00
  */
 @ToString

@@ -3,7 +3,7 @@ package com.lens.blog.app.base.enums;
 /**
  * 菜单类型枚举类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年3月21日08:42:26
  */
 public class EMenuType {

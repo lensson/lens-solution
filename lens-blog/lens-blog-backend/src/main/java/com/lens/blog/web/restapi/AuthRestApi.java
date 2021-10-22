@@ -59,7 +59,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 第三方登录认证
- * @author 陌溪
+ * @author Lens
  * @date 2020年10月11日10:25:58
  */
 @RestController

@@ -23,7 +23,7 @@ import java.util.Map;
 /**
  * Solr搜索相关接口
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020/9/15 15:22
  */
 @RestController

@@ -27,7 +27,7 @@ import java.util.*;
 /**
  * 学习视频表 服务实现类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2018-09-04
  */
 @Service

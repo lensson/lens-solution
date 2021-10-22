@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 全局异常处理配置
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年10月4日10:44:17
  */
 @Configuration

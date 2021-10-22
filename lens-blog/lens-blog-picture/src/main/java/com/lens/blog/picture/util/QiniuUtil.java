@@ -33,7 +33,7 @@ import java.util.Map;
 /**
  * 七牛云工具类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年1月20日20:02:36
  * @comments: 七牛云图片配置
  */

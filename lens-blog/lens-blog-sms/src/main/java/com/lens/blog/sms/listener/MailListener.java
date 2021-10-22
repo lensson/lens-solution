@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * 邮件监听器【用于发送邮件】
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年10月6日10:09:30
  */
 @Slf4j

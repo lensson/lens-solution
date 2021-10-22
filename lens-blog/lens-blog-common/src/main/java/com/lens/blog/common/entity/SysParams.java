@@ -10,7 +10,7 @@ import lombok.Data;
  * 参数配置表
  * </p>
  *
- * @author 陌溪
+ * @author Lens
  * @since 2020年7月21日15:47:30
  */
 @Data

@@ -13,7 +13,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 /**
  * Swagger配置文件
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年9月7日18:09:35
  */
 @Configuration

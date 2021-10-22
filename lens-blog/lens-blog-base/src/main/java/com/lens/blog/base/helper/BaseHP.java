@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * HP基类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2017年9月29日19:47:44
  */
 @Component

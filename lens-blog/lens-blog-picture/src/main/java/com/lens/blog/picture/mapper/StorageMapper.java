@@ -6,7 +6,7 @@ import com.lens.blog.base.mapper.SuperMapper;
 /**
  * Mapper 接口
  *
- * @author 陌溪
+ * @author Lens
  * @since 2020年6月13日17:21:48
  */
 public interface StorageMapper extends SuperMapper<Storage> {

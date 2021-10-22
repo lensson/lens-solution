@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 本地文件系统服务类【通过IO流存储到本地】
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年10月19日16:57:23
  */
 public interface LocalFileService {

@@ -1,7 +1,7 @@
 package com.lens.blog.app.base.enums;
 
 /**
- * @Author: 陌溪
+ * @Author: Lens
  * @Date: 2019年12月4日15:13:43
  */
 public enum SystemLanguageEnum {

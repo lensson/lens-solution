@@ -10,7 +10,7 @@ import javax.validation.ConstraintValidatorContext;
 /**
  * 判断是否为数字【校验器】
  *
- * @author 陌溪
+ * @author Lens
  * @date 2019年12月4日13:16:36
  */
 public class NumericValidator implements ConstraintValidator<Numeric, String> {

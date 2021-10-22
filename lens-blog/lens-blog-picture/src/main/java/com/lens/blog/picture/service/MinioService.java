@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 本地对象存储服务 Minio文件上传服务类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年10月19日11:12:14
  */
 public interface MinioService {

@@ -8,7 +8,7 @@ import com.lens.blog.base.service.SuperService;
 /**
  * 待办事项表 服务类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2019年6月29日10:31:18
  */
 public interface TodoService extends SuperService<Todo> {

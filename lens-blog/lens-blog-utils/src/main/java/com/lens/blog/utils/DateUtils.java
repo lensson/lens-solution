@@ -66,7 +66,7 @@ public class DateUtils {
 
     /**
      * @return
-     * @author 陌溪
+     * @author Lens
      * @date 2018年6月14日
      */
     public static String getNowTimeFormat() {

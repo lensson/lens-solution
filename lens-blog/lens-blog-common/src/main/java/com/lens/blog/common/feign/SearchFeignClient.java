@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * 搜索服务feign远程调用
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年10月6日09:08:13
  */
 @FeignClient(name = "lens-blog-search", configuration = FeignConfiguration.class, fallback = SearchFeignFallback.class)

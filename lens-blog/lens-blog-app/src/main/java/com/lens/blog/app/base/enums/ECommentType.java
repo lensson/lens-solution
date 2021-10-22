@@ -3,7 +3,7 @@ package com.lens.blog.app.base.enums;
 /**
  * 评论类型枚举类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年3月14日09:22:46
  */
 public class ECommentType {

@@ -3,7 +3,7 @@ package com.lens.blog.base.enums;
 /**
  * 性别枚举类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年5月28日09:28:14
  */
 public class EGender {

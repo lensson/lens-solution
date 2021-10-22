@@ -5,7 +5,7 @@ import com.lens.blog.base.global.BaseSysConf;
 /**
  * 系统常量
  *
- * @author 陌溪
+ * @author Lens
  * @date 2018年10月20日15:13:20
  */
 public final class SysConf extends BaseSysConf {

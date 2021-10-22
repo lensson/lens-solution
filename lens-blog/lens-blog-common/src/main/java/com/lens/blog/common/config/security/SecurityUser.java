@@ -9,7 +9,7 @@ import java.util.Collection;
 /**
  * SpringSecurity中的用户实体类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年9月19日21:43:47
  */
 public class SecurityUser implements UserDetails {

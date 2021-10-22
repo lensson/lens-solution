@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 专题表 服务类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年8月22日22:03:52
  */
 public interface SubjectService extends SuperService<Subject> {

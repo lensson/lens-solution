@@ -3,7 +3,7 @@ package com.lens.blog.base.enums;
 /**
  * 开启状态枚举类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年4月7日16:42:29
  */
 public class EOpenStatus {

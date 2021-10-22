@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 字典数据 服务类
  *
- * @author 陌溪
+ * @author Lens
  * @date 2020年2月15日21:06:45
  */
 public interface SysDictDataService extends SuperService<SysDictData> {

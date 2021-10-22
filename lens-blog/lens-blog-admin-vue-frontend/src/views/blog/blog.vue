@@ -725,7 +725,7 @@ export default {
         author: null, //作者
         level: parseInt(this.blogLevelDefault), //推荐等级，默认是正常
         openComment: this.openDefault, // 是否启动
-        articlesPart: null //文章出处，默认蘑菇博客
+        articlesPart: null //文章出处，默认麻辣博客
       };
       return formObject;
     },
