@@ -1,0 +1,97 @@
+import 'package:flutter/material.dart';
+import 'package:lens_blog_flutter_frontend/apis/postAPI.dart';
+
+import 'package:lens_blog_flutter_frontend/config/platform_type.dart';
+import 'package:lens_blog_flutter_frontend/json/category.dart';
+import 'package:lens_blog_flutter_frontend/notifier/selected_articles_item_list.dart';
+import 'package:lens_blog_flutter_frontend/widgets/article_items_mobile.dart';
+import 'package:lens_blog_flutter_frontend/widgets/article_items_pc.dart';
+import 'package:lens_blog_flutter_frontend/widgets/left_bar.dart';
+import 'package:lens_blog_flutter_frontend/widgets/module.dart';
+import 'package:provider/provider.dart';
+
+class HomePage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return new HomePageState();
+  }
+}
+
+class HomePageState extends State<HomePage> {
+  ArticleType type = ArticleType.study;
+
+//  List<ArticleItemBean> showDataList = [];
+  final GlobalKey<ScaffoldState> globalKey = GlobalKey();
+  List<Category> categoryList = [];
+
+  @override
+  void initState() {
+    PostAPI.getArticleItemList(
+      context: context,
+    ).then((value) {
+      if (value != null) {
+        Provider.of<SelectedArticleItemList>(context).setItemList(value.models);
+      }
+    });
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
+    final height = size.height;
+    final fontSizeByHeight = height * 30 / 1200;
+    final detector = PlatformType();
+    final isNotMobile = !detector.isMobile();
+
+    return CommonLayout(
+      globalKey: globalKey,
+      drawer: LeftBar(height),
+      child: Container(
+        child: isNotMobile
+            ? getPcGrid(size, fontSizeByHeight, context)
+            : getMobileList(),
+      ),
+    );
+  }
+
+  Row getPcGrid(Size size, double fontSizeByHeight, BuildContext context) {
+    double width = size.width;
+    double height = size.height;
+
+    return Row(
+      children: <Widget>[
+        LeftBar(height),
+        Consumer<SelectedArticleItemList>(
+          builder: (context, sc, child) {
+            return new PCArticleItems(size);
+          },
+        ),
+      ],
+    );
+  }
+
+  void refresh() {
+    setState(() {});
+  }
+
+  Widget getMobileList() {
+    return Consumer<SelectedArticleItemList>(
+      builder: (context, sc, child) {
+        return new MobileArticleItems();
+      },
+    );
+  }
+
+  double getScaleSizeByWidth(double width, double size) {
+    return size * width / 1600;
+  }
+
+  double getScaleSizeByHeight(double height, double size) {
+    return size * height / 1200;
+  }
+}
+
+enum ArticleType { life, study, topic }
