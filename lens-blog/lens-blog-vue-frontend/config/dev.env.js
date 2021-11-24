@@ -10,4 +10,5 @@ module.exports = merge(prodEnv, {
 	WEB_API: '"/api/v1/blog/web"',
 	ELASTICSEARCH: '"/api/v1/es"',
 
+  devtool: 'source-map'
 })

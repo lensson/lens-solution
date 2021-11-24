@@ -462,7 +462,7 @@
   <footer>
     <p>
       <a href="http://localhost:9527/" target="_blank">&nbsp;&nbsp;</a>
-      <a href="javasrcipt:void(0);" @click="goIndex()">Copyright 2019-2020&nbsp;{{info.name}}&nbsp;</a>
+      <a href="javasrcipt:void(0);" @click="goIndex()">Copyright {{currentYear-1}}-{{currentYear}}&nbsp;{{info.name}}&nbsp;</a>
       <a href="http://www.beian.miit.gov.cn">{{info.recordNum}}</a>
     </p>
   </footer>
@@ -498,6 +498,7 @@
     },
     data() {
       return {
+        currentYear: 2000,
         // xss白名单配置
         options : {
           whiteList: {
@@ -958,6 +959,7 @@
        * 获取网站配置
         */
       getWebConfigInfo: function() {
+        this.currentYear = (new Date()).getFullYear();
         let webConfigData = this.$store.state.app.webConfigData
         if(webConfigData.createTime) {
           this.contact = webConfigData;
