@@ -1,0 +1,11 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:33306/lens_wx?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+        username: lens
+        password: lens
+
+springfox:
+    documentation:
+        swagger-ui:
+            enabled: false
