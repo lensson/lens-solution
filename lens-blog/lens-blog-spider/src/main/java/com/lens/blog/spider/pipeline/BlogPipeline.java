@@ -16,7 +16,8 @@ import us.codecraft.webmagic.pipeline.Pipeline;
 public class BlogPipeline implements Pipeline {
 
 
-    private final String SAVE_PATH = "~/containers/lens-blog-spider/tensquare/webmgicFile/piantuUrl/youxi/";
+
+    private final String SAVE_PATH = System.getProperty("user.home") + "/containers/lens-blog-spider/tensquare/webmgicFile/piantuUrl/youxi/";
     @Autowired
     private IdWorker idWorker;
     @Autowired
