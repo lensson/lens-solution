@@ -11,6 +11,8 @@
 **/*~
 # all iml files
 **/*.iml
+**/*.ipr
+**/*.iws
 .idea/
 **/npm-debug.log
 **/yarn-error.log
