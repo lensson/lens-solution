@@ -6,7 +6,7 @@ module.exports = {
 			'/wx/gzh': {
 				target: 'http://localhost:9031/',
                 changeOrigin: true,
-                pathRewrite: { '^/wx/gzh': '/' }
+                pathRewrite: { '^/api/v1/wx/gzh': '/' }
 			}
 		},
 		port:8071,
