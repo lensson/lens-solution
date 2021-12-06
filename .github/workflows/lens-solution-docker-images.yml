@@ -24,13 +24,14 @@ jobs:
           
       - name: Build All lens-blog fronted Modules
         run: |
-          pwd
-          ls -al
+          cd lens-blog
+
           echo '=====开始安装lens-blog-vue-admin-frontend依赖====='
           cd lens-blog-admin-vue-frontend
           npm install
           npm run build
           cd ..
+
           echo '=====开始安装lens-blog-vue-frontend依赖====='
           cd lens-blog-vue-frontend
           npm install
@@ -39,6 +40,8 @@ jobs:
           
       - name: Build lens-blog Java Docker Images
         run: |
+          cd lens-blog
+
           echo '=====开始构建镜像====='
           echo '=====开始构建lens-blog-admin-backend====='
           cd lens-blog-admin-backend
