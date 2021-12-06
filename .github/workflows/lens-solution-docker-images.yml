@@ -14,6 +14,10 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 1.8    
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 8.17.x
+
       - name: Build All lens-blog Backend Modules
         run: |
           cd lens-blog
@@ -72,3 +76,16 @@ jobs:
           cd lens-blog-backend
           mvn dockerfile:build
           cd ..
+      - name: Build lens-blog Vue Frontend Docker Images
+        run: |
+          echo '=====开始构建镜像====='
+          echo '=====开始构建lens-blog-admin-vue-frontend====='
+          cd lens-blog
+          cd lens-blog-admin-vue-frontend
+          docker build -t lensson/lens-blog-admin-vue-frontend .
+          cd ..
+          echo '=====开始构建lens-blog-vue-frontend====='
+          cd lens-blog-vue-frontend
+          docker build -t lensson/lens-blog-vue-frontend .
+          cd ..
+          echo '=====镜像构建结束====='
