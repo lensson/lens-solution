@@ -63,13 +63,13 @@
         <module>lens-blog-base</module>
         <module>lens-blog-common</module>
         <module>lens-blog-xo</module>
+        <module>lens-blog-monitor</module>
         <module>lens-blog-sms</module>
         <module>lens-blog-picture</module>
-        <module>lens-blog-monitor</module>
         <module>lens-blog-search</module>
         <module>lens-blog-admin-backend</module>
         <module>lens-blog-backend</module>
-
+        <module>lens-blog-spider</module>
         <!--
         <module>lens-blog-admin-vue-frontend</module>
         <module>lens-blog-vue-frontend</module>
