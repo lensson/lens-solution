@@ -75,8 +75,9 @@
 
     <modules>
         <!-- plumemo -->
+        <!--
         <module>lens-plumemo</module>
-
+        -->
         <!-- common -->
         <module>lens-common</module>
 
@@ -84,13 +85,14 @@
         <module>lens-infra</module>
 
         <!-- platform code -->
+        <!--
         <module>lens-platform</module>
-
+        -->
         <!-- blog -->
         <module>lens-blog</module>
 
         <!-- wechat module-->
-        <module>wx</module>
+        <module>lens-wx</module>
 
 
     </modules>

@@ -17,6 +17,7 @@
 
     <modules>
         <module>lens-plumemo-server</module>
+        <module>lens-plumemo-admin-client</module>
     </modules>
 
     <properties>

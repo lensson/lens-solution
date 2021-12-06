@@ -18,9 +18,8 @@ jobs:
         with:
           node-version: 8.17.x
 
-      - name: Build All lens-blog Backend Modules
+      - name: Build All lens-solution Backend Modules
         run: |
-          cd lens-blog
           echo '=====开始mvn clean====='
           mvn clean
           echo '=====开始mvn install&&package====='
