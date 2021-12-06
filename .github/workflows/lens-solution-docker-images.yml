@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 1.8    
-      - name: Maven Clean Install All lens-blog Backend Modules
+      - name: Build All lens-blog Backend Modules
         run: |
           cd lens-blog
           echo '=====开始mvn clean====='
@@ -22,15 +22,15 @@ jobs:
           echo '=====开始mvn install&&package====='
           mvn install -DskipTests=true && mvn package -DskipTests=true
           
-      - name: Build lens-blog-vue-admin-frontend and lens-blog-vue-frontend
+      - name: Build All lens-blog fronted Modules
         run: |
           echo '=====开始安装lens-blog-vue-admin-frontend依赖====='
-          cd ./lens-blog-admin-vue-frontend
+          cd lens-blog-admin-vue-frontend
           npm install
           npm run build
           cd ..
           echo '=====开始安装lens-blog-vue-frontend依赖====='
-          cd ./lens-blog-vue-frontend
+          cd lens-blog-vue-frontend
           npm install
           npm run build
           cd ..
