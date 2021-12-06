@@ -25,7 +25,7 @@ jobs:
       - name: Build lens-blog-vue-admin-frontend and lens-blog-vue-frontend
         run: |
           echo '=====开始安装lens-blog-vue-admin-frontend依赖====='
-          cd ./lens-blog-vue-admin-frontend
+          cd ./lens-blog-admin-vue-frontend
           npm install
           npm run build
           cd ..
@@ -43,7 +43,27 @@ jobs:
           mvn dockerfile:build
           cd ..
           
-          echo '=====开始构建mogu_monitor====='
+          echo '=====开始构建lens-blog-monitor====='
           cd lens-blog-monitor
           mvn dockerfile:build
           cd ..          
+          echo '=====开始构建lens-blog-picture====='
+          cd lens-blog-picture
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-blog-search====='
+          cd lens-blog-search
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-blog-sms====='
+          cd lens-blog-sms
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-blog-spider====='
+          cd lens-blog-spider
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-blog-backend====='
+          cd lens-blog-backend
+          mvn dockerfile:build
+          cd ..
