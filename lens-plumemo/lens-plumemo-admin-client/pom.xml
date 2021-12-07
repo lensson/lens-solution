@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.lens</groupId>
+    <artifactId>plumemo</artifactId>
+    <version>v1.2.0</version>
+    <name>lens-plumemo-admin-client</name>
+    <description>plumemo - 一个轻量、易用、前后端分离的博客系统</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <docker-maven-plugin.version>0.4.3</docker-maven-plugin.version>
+        <maven.docker.plugin.version>${docker-maven-plugin.version}</maven.docker.plugin.version>
+
+    </properties>
+
+    <dependencies>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.2</version>
+                <configuration>
+                    <imageName>lensson/lens-plumemo-admin-vue-frontend</imageName>
+                    <dockerDirectory>./</dockerDirectory>
+                    <forceTags>true</forceTags>
+                    <network>solution_backnet</network>
+                </configuration>
+            </plugin>
+
+          <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>dockerfile-maven-plugin</artifactId>
+            <version>${dockerfile.maven.version}</version>
+            <configuration>
+              <repository>${docker.image.prefix}/${project.artifactId}</repository>
+              <contextDirectory>./</contextDirectory>
+              <tag>latest</tag>
+              <buildArgs>
+                <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+              </buildArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+    </build>
+
+</project>
