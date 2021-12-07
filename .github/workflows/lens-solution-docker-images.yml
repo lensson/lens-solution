@@ -24,8 +24,9 @@ jobs:
       - name: Test python
         run: |
           python --version        
-          which python
-          which python2
+          which node
+          node --version
+          npm --version
       # - name: Build All lens-solution Backend Modules
       #   run: |
       #     echo '=====开始mvn clean====='
