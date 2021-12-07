@@ -1,7 +1,7 @@
 FROM node:latest as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm config set registry http://artifactory-espoo-fnms.int.net.nokia.com:8081/artifactory/api/npm/npm-virtual/
+#RUN npm config set registry http://artifactory-espoo-fnms.int.net.nokia.com:8081/artifactory/api/npm/npm-virtual/
 RUN npm install
 COPY ./ .
 RUN npm run build
