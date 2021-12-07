@@ -81,10 +81,37 @@ jobs:
           echo '=====开始构建lens-blog-admin-vue-frontend====='
           cd lens-blog
           cd lens-blog-admin-vue-frontend
-          docker build -t lensson/lens-blog-admin-vue-frontend .
+          docker build -t lensson/lens-blog-admin-vue-frontend:latest .
           cd ..
           echo '=====开始构建lens-blog-vue-frontend====='
           cd lens-blog-vue-frontend
-          docker build -t lensson/lens-blog-vue-frontend .
+          docker build -t lensson/lens-blog-vue-frontend:latest .
           cd ..
           echo '=====镜像构建结束====='
+
+      # 登录到 dockerhub
+      - name: Login to Dockerhub
+        uses: docker/login-action@v1
+        with:
+          registry: registry.cn-shenzhen.aliyuncs.com
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Push Docker Image
+        run: |
+          echo '=====开始上传镜像====='
+          echo '=====开始上传lens-blog-admin-backend====='
+          docker push lensson/lens-blog-admin-backend:latest
+          echo '=====开始上传lens-blog-monitor====='
+          docker push lensson/lens-blog-monitor:latest
+          echo '=====开始上传lens-blog-picture====='
+          docker push lensson/lens-blog-picture:latest
+          echo '=====开始上传lens-blog-search====='
+          docker push lensson/lens-blog-search:latest
+          echo '=====开始上传lens-blog-sms====='
+          docker push lensson/lens-blog-sms:latest                  
+          echo '=====开始上传lens-blog-spider====='
+          docker push lensson/lens-blog-spider:latest
+          echo '=====开始上传lens-blog-backend====='
+          docker push lensson/lens-blog-backend:latest
+          echo '=====镜像上传结束====='          
