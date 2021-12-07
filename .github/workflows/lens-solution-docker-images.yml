@@ -21,7 +21,8 @@ jobs:
         with:
           python-version: '2.7.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified          
-
+      - name: Test python
+        run: python --version
       - name: Build All lens-solution Backend Modules
         run: |
           echo '=====开始mvn clean====='
