@@ -23,4 +23,3 @@
 dependency-reduced-pom.xml
 **/.mvn/*
 **/yang.lock
-**/package-lock.json
