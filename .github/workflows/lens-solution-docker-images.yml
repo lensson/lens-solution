@@ -122,5 +122,10 @@ jobs:
           # echo '=====开始上传lens-blog-spider====='
           # docker push lensson/lens-blog-spider:latest
           # echo '=====开始上传lens-blog-backend====='
-          docker push lensson/lens-blog-backend:latest
+          # docker push lensson/lens-blog-backend:latest
+
+          # echo '=====开始上传lens-blog-admin-vue-frontend====='
+          # docker push lensson/lens-blog-admin-vue-frontend:latest
+          # echo '=====开始上传lens-blog-vue-frontend====='
+          # docker push lensson/lens-blog-vue-frontend:latest                    
           echo '=====镜像上传结束====='          
