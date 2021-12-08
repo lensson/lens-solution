@@ -44,11 +44,11 @@ jobs:
           npm run build
           cd ..
 
-          echo '=====开始安装lens-blog-vue-frontend依赖====='
-          cd lens-blog-vue-frontend
-          npm install
-          npm run build
-          cd ..
+      #     echo '=====开始安装lens-blog-vue-frontend依赖====='
+      #     cd lens-blog-vue-frontend
+      #     npm install
+      #     npm run build
+      #     cd ..
           
       # - name: Build lens-blog Java Docker Images
       #   run: |
@@ -92,11 +92,11 @@ jobs:
           cd lens-blog-admin-vue-frontend
           docker build -t lensson/lens-blog-admin-vue-frontend:latest .
           cd ..
-          echo '=====开始构建lens-blog-vue-frontend====='
-          cd lens-blog-vue-frontend
-          docker build -t lensson/lens-blog-vue-frontend:latest .
-          cd ..
-          echo '=====镜像构建结束====='
+          # echo '=====开始构建lens-blog-vue-frontend====='
+          # cd lens-blog-vue-frontend
+          # docker build -t lensson/lens-blog-vue-frontend:latest .
+          # cd ..
+          # echo '=====镜像构建结束====='
 
       # 登录到 dockerhub
       - name: Login to Dockerhub
