@@ -12,7 +12,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>lens-blog-admin-vue-frontend</name>
   <description>Blog admin VUE frontend</description>
-
+  <packaging>pom</packaging>
   <properties>
   </properties>
 
