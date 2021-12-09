@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       build-environment: github
-#========================== lens-blog =================================
+    #========================== lens-blog =================================
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v1
         with:
-          java-version: 1.8    
+          java-version: 1.8
       - uses: actions/setup-node@v1
         with:
           node-version: 8.17.0
@@ -22,82 +22,74 @@ jobs:
         with:
           python-version: '2.7.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified          
-      - name: Test python
+      - name: Build All lens-solution Backend Modules
         run: |
-          python --version        
-          which node
-          node --version
-          npm --version
-      # - name: Build All lens-solution Backend Modules
-      #   run: |
-      #     echo '=====开始mvn clean====='
-      #     mvn clean
-      #     echo '=====开始mvn install&&package====='
-      #     mvn install -DskipTests=true && mvn package -DskipTests=true
-          
-      - name: Build All lens-blog fronted Modules
+          echo '=====开始mvn clean====='
+          mvn clean
+          echo '=====开始mvn install&&package====='
+          mvn install -DskipTests=true && mvn package -DskipTests=true
+
+          #      - name: Build All lens-blog fronted Modules
+          #        run: |
+          #          cd lens-blog
+          #
+          #          echo '=====开始安装lens-blog-vue-admin-frontend依赖====='
+          #          cd lens-blog-admin-vue-frontend
+          #          npm install
+          #          npm run build
+          #          cd ..
+          #
+          #          echo '=====开始安装lens-blog-vue-frontend依赖====='
+          #          cd lens-blog-vue-frontend
+          #          npm install
+          #          npm run build
+          #          cd ..
+
+      - name: Build lens-blog Java Docker Images
         run: |
           cd lens-blog
-
-          echo '=====开始安装lens-blog-vue-admin-frontend依赖====='
-          cd lens-blog-admin-vue-frontend
-          npm install
-          npm run build
+          echo '=====开始构建镜像====='
+          echo '=====开始构建lens-blog-admin-backend====='
+          cd lens-blog-admin-backend
+          mvn dockerfile:build
           cd ..
-
-      #     echo '=====开始安装lens-blog-vue-frontend依赖====='
-      #     cd lens-blog-vue-frontend
-      #     npm install
-      #     npm run build
-      #     cd ..
-          
-      # - name: Build lens-blog Java Docker Images
-      #   run: |
-      #     cd lens-blog
-
-      #     echo '=====开始构建镜像====='
-      #     echo '=====开始构建lens-blog-admin-backend====='
-      #     cd lens-blog-admin-backend
-      #     mvn dockerfile:build
-      #     cd ..
-          
-      #     echo '=====开始构建lens-blog-monitor====='
-      #     cd lens-blog-monitor
-      #     mvn dockerfile:build
-      #     cd ..          
-      #     echo '=====开始构建lens-blog-picture====='
-      #     cd lens-blog-picture
-      #     mvn dockerfile:build
-      #     cd ..
-      #     echo '=====开始构建lens-blog-search====='
-      #     cd lens-blog-search
-      #     mvn dockerfile:build
-      #     cd ..
-      #     echo '=====开始构建lens-blog-sms====='
-      #     cd lens-blog-sms
-      #     mvn dockerfile:build
-      #     cd ..
-      #     echo '=====开始构建lens-blog-spider====='
-      #     cd lens-blog-spider
-      #     mvn dockerfile:build
-      #     cd ..
-      #     echo '=====开始构建lens-blog-backend====='
-      #     cd lens-blog-backend
-      #     mvn dockerfile:build
-      #     cd ..
+          echo '=====开始构建lens-blog-monitor====='
+          cd lens-blog-monitor
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-blog-picture====='
+          cd lens-blog-picture
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-blog-search====='
+          cd lens-blog-search
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-blog-sms====='
+          cd lens-blog-sms
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-blog-spider====='
+          cd lens-blog-spider
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-blog-backend====='
+          cd lens-blog-backend
+          mvn dockerfile:build
+          cd ..
       - name: Build lens-blog Vue Frontend Docker Images
         run: |
           echo '=====开始构建镜像====='
           echo '=====开始构建lens-blog-admin-vue-frontend====='
           cd lens-blog
           cd lens-blog-admin-vue-frontend
-          docker build -t lensson/lens-blog-admin-vue-frontend:latest .
+          mvn dockerfile:build
           cd ..
-          # echo '=====开始构建lens-blog-vue-frontend====='
-          # cd lens-blog-vue-frontend
-          # docker build -t lensson/lens-blog-vue-frontend:latest .
-          # cd ..
-          # echo '=====镜像构建结束====='
+          echo '=====开始构建lens-blog-vue-frontend====='
+          cd lens-blog-vue-frontend
+          mvn dockerfile:build
+          cd ..
+          echo '=====镜像构建结束====='
 
       # 登录到 dockerhub
       - name: Login to Dockerhub
@@ -109,23 +101,22 @@ jobs:
       - name: Push Docker Image
         run: |
           echo '=====开始上传镜像====='
-          # echo '=====开始上传lens-blog-admin-backend====='
-          # docker push lensson/lens-blog-admin-backend:latest
-          # echo '=====开始上传lens-blog-monitor====='
-          # docker push lensson/lens-blog-monitor:latest
-          # echo '=====开始上传lens-blog-picture====='
-          # docker push lensson/lens-blog-picture:latest
-          # echo '=====开始上传lens-blog-search====='
-          # docker push lensson/lens-blog-search:latest
-          # echo '=====开始上传lens-blog-sms====='
-          # docker push lensson/lens-blog-sms:latest                  
-          # echo '=====开始上传lens-blog-spider====='
-          # docker push lensson/lens-blog-spider:latest
-          # echo '=====开始上传lens-blog-backend====='
-          # docker push lensson/lens-blog-backend:latest
-
+          echo '=====开始上传lens-blog-admin-backend====='
+          docker push lensson/lens-blog-admin-backend:latest
+          echo '=====开始上传lens-blog-monitor====='
+          docker push lensson/lens-blog-monitor:latest
+          echo '=====开始上传lens-blog-picture====='
+          docker push lensson/lens-blog-picture:latest
+          echo '=====开始上传lens-blog-search====='
+          docker push lensson/lens-blog-search:latest
+          echo '=====开始上传lens-blog-sms====='
+          docker push lensson/lens-blog-sms:latest
+          echo '=====开始上传lens-blog-spider====='
+          docker push lensson/lens-blog-spider:latest
+          echo '=====开始上传lens-blog-backend====='
+          docker push lensson/lens-blog-backend:latest
           echo '=====开始上传lens-blog-admin-vue-frontend====='
           docker push lensson/lens-blog-admin-vue-frontend:latest
-          # echo '=====开始上传lens-blog-vue-frontend====='
-          # docker push lensson/lens-blog-vue-frontend:latest                    
-          echo '=====镜像上传结束====='          
+          echo '=====开始上传lens-blog-vue-frontend====='
+          docker push lensson/lens-blog-vue-frontend:latest
+          echo '=====镜像上传结束====='
