@@ -21,29 +21,14 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '2.7.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified          
-      - name: Build All lens-solution Backend Modules
+          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+      - name: Build All lens-solution Modules
         run: |
           echo '=====开始mvn clean====='
           mvn clean
           echo '=====开始mvn install&&package====='
           mvn install -DskipTests=true && mvn package -DskipTests=true
 
-          #      - name: Build All lens-blog fronted Modules
-          #        run: |
-          #          cd lens-blog
-          #
-          #          echo '=====开始安装lens-blog-vue-admin-frontend依赖====='
-          #          cd lens-blog-admin-vue-frontend
-          #          npm install
-          #          npm run build
-          #          cd ..
-          #
-          #          echo '=====开始安装lens-blog-vue-frontend依赖====='
-          #          cd lens-blog-vue-frontend
-          #          npm install
-          #          npm run build
-          #          cd ..
 
       - name: Build lens-blog Java Docker Images
         run: |
@@ -98,9 +83,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Push Docker Image
+      - name: Push lens-blog Docker Image
         run: |
-          echo '=====开始上传镜像====='
+          echo '=====开始上传lens-blog镜像====='
           echo '=====开始上传lens-blog-admin-backend====='
           docker push lensson/lens-blog-admin-backend:latest
           echo '=====开始上传lens-blog-monitor====='
@@ -119,4 +104,12 @@ jobs:
           docker push lensson/lens-blog-admin-vue-frontend:latest
           echo '=====开始上传lens-blog-vue-frontend====='
           docker push lensson/lens-blog-vue-frontend:latest
+          echo '=====镜像上传结束====='
+      - name: Push lens-wx Docker Image
+        run: |
+          echo '=====开始上传lens-wx镜像====='
+          echo '=====开始上传lens-gzh-backend====='
+          docker push lensson/lens-gzh-backend:latest
+          echo '=====开始上传lens-gzh-frontend====='
+          docker push lensson/lens-gzh-frontend:latest
           echo '=====镜像上传结束====='

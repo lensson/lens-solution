@@ -11,6 +11,7 @@
 
     <modules>
         <module>lens-gzh-backend</module>
+        <module>lens-gzh-frontend</module>
     </modules>
 
     <properties>
