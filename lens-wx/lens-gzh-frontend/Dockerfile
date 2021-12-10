@@ -1,4 +1,4 @@
-FROM node:latest as build-stage
+FROM node:8.17.0 as build-stage
 WORKDIR /app
 COPY package*.json ./
 #RUN export http_proxy=http://10.158.100.6:8080
