@@ -11,7 +11,7 @@
     <groupId>com.lens</groupId>
     <artifactId>lens-blog-picture</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lens-blog-picture</name>
+    <name>lens-blog/lens-blog-picture</name>
     <description>lens blog picture</description>
 
 

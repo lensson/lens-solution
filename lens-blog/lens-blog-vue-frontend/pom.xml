@@ -11,7 +11,7 @@
 
     <artifactId>lens-blog-vue-frontend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lens-blog-vue-frontend</name>
+    <name>lens-blog/lens-blog-vue-frontend</name>
     <description>Lens blog VUE frontend</description>
     <packaging>pom</packaging>
   <properties>

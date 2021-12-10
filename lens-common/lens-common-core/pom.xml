@@ -11,7 +11,7 @@
     <groupId>com.lens</groupId>
     <artifactId>lens-common-core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lens-common-core</name>
+    <name>lens-common/lens-common-core</name>
     <description>Common core</description>
 
     <properties>

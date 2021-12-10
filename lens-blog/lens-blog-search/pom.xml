@@ -11,7 +11,7 @@
 	<groupId>com.lens</groupId>
 	<artifactId>lens-blog-search</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lens-blog-search</name>
+	<name>lens-blog/lens-blog-search</name>
 	<description>Search project of blog</description>
 
 	<properties>

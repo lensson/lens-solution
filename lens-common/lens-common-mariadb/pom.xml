@@ -11,7 +11,7 @@
     <groupId>com.lens</groupId>
     <artifactId>lens-common-mariadb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lens-common-mariadb</name>
+    <name>lens-common/lens-common-mariadb</name>
     <description>Mariadb Config of Common</description>
 
     <properties>

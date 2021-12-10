@@ -8,12 +8,12 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
+    <modelVersion>4.0.0</modelVersion>
     <artifactId>lens-blog-utils</artifactId>
+    <name>lens-blog/lens-blog-utils</name>
 
     <properties>
-
     </properties>
 
     <dependencies>

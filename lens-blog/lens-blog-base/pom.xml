@@ -15,7 +15,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>lens-blog-base</artifactId>
-    <name>lens-blog-base</name>
+    <name>lens-blog/lens-blog-base</name>
     <description>Blog base project</description>
     <dependencies>
         <dependency>

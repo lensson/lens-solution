@@ -11,7 +11,7 @@
 
     <artifactId>lens-gzh-frontend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lens-gzh-frontend</name>
+    <name>lens-wx/lens-gzh-frontend</name>
     <description>Lens WX GZH VUE frontend</description>
     <packaging>pom</packaging>
   <properties>

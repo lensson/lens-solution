@@ -10,7 +10,7 @@
 	</parent>
 	<artifactId>lens-blog-spider</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lens-blog-spider</name>
+	<name>lens-blog/lens-blog-spider</name>
 	<description>Spider Project of Lens Blog</description>
 
 	<properties>

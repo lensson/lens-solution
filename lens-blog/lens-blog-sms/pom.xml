@@ -12,7 +12,7 @@
     <groupId>com.lens</groupId>
     <artifactId>lens-blog-sms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lens-blog-sms</name>
+    <name>lens-blog/lens-blog-sms</name>
     <description>Lens Blog SMS</description>
 
     <properties>

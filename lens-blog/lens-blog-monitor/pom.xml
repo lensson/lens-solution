@@ -11,7 +11,7 @@
 	<groupId>com.lens</groupId>
 	<artifactId>lens-blog-monitor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lens-blog-monitor</name>
+	<name>lens-blog/lens-blog-monitor</name>
 	<description>Lens Blog Monitor</description>
 
 	<properties>

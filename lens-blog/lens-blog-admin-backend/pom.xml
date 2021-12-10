@@ -10,7 +10,7 @@
     </parent>
     <artifactId>lens-blog-admin-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lens-blog-admin-backend</name>
+    <name>lens-blog/lens-blog-admin-backend</name>
     <description>Blog admin backend</description>
 
     <properties>

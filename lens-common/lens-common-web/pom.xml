@@ -11,7 +11,7 @@
     <groupId>com.lens</groupId>
     <artifactId>lens-common-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lens-common-web</name>
+    <name>lens-common/lens-common-web</name>
     <description>Lens common web</description>
 
     <properties>
