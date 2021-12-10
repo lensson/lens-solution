@@ -30,10 +30,10 @@ jobs:
           mvn install -DskipTests=true && mvn package -DskipTests=true
 
 
-      - name: Build lens-blog Java Docker Images
+      - name: Build lens-blog Docker Images
         run: |
           cd lens-blog
-          echo '=====开始构建镜像====='
+          echo '=====开始构建lens-blog镜像群====='
           echo '=====开始构建lens-blog-admin-backend====='
           cd lens-blog-admin-backend
           mvn dockerfile:build
@@ -62,11 +62,7 @@ jobs:
           cd lens-blog-backend
           mvn dockerfile:build
           cd ..
-      - name: Build lens-blog Vue Frontend Docker Images
-        run: |
-          echo '=====开始构建镜像====='
           echo '=====开始构建lens-blog-admin-vue-frontend====='
-          cd lens-blog
           cd lens-blog-admin-vue-frontend
           mvn dockerfile:build
           cd ..
@@ -74,7 +70,20 @@ jobs:
           cd lens-blog-vue-frontend
           mvn dockerfile:build
           cd ..
-          echo '=====镜像构建结束====='
+          echo '=====完成构建lens-blog镜像群====='
+      - name: Build lens-wx Docker Images
+        run: |
+          echo '=====开始构建lens-wx镜像群====='
+          echo '=====开始构建lens-gzh-backend====='
+          cd lens-wx
+          cd lens-gzh-frontend
+          mvn dockerfile:build
+          cd ..
+          echo '=====开始构建lens-gzh-frontend====='
+          cd lens-gzh-frontend
+          mvn dockerfile:build
+          cd ..
+          echo '=====完成构建lens-wx镜像群====='
 
       # 登录到 dockerhub
       - name: Login to Dockerhub
