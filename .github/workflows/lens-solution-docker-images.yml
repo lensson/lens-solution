@@ -70,6 +70,7 @@ jobs:
           cd lens-blog-vue-frontend
           mvn dockerfile:build
           cd ..
+          
           echo '=====完成构建lens-blog镜像群====='
       - name: Build lens-wx Docker Images
         run: |
