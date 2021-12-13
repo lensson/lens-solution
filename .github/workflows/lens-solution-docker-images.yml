@@ -70,6 +70,7 @@ jobs:
           cd lens-blog-vue-frontend
           mvn dockerfile:build
           cd ..
+          echo '=====完成构建lens-blog镜像群====='
       - name: Build lens-wx Docker Images
         run: |
           echo '=====开始构建lens-wx镜像群====='
@@ -80,11 +81,9 @@ jobs:
           cd ..
           echo '=====开始构建lens-gzh-frontend====='
           cd lens-gzh-frontend
-        # mvn dockerfile:build
           docker build . -t lensson/lens-gzh-frontend:latest
           cd ..
           echo '=====完成构建lens-wx镜像群====='
-
       # 登录到 dockerhub
       - name: Login to Dockerhub
         uses: docker/login-action@v1
