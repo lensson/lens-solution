@@ -81,7 +81,7 @@ jobs:
           cd ..
           echo '=====开始构建lens-gzh-frontend====='
           cd lens-gzh-frontend
-#          mvn dockerfile:build
+        # mvn dockerfile:build
           docker build . -t lensson/lens-gzh-frontend:latest
           cd ..
           echo '=====完成构建lens-wx镜像群====='
