@@ -1,4 +1,4 @@
 FROM ohttps/ohttps-nginx
 WORKDIR /etc/nginx
-ENV PUSH_NODE_ID='push-d5py6vrvvlrnze13'
-ENV PUSH_NODE_TOKEN='d52a6548c2acac66386e374d7a775145'
+ENV PUSH_NODE_ID='push-enm4pr15pw09g3x5'
+ENV PUSH_NODE_TOKEN='6198ef2a675e2a799a9c829df02ab2f8'
