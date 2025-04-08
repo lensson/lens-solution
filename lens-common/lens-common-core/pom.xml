@@ -23,7 +23,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <version>${lombok.version}</version>
+            <!--<optional>true</optional>-->
         </dependency>
 
         <!-- swagger2-annotations -->

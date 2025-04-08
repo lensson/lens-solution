@@ -48,7 +48,7 @@
         <dockerfile.maven.version>1.4.10</dockerfile.maven.version>
 
 
-        <lombok.version>1.18.12</lombok.version>
+        <lombok.version>1.18.28</lombok.version>
 
 
         <pagehelper.spring.boot.starter.version>1.2.5</pagehelper.spring.boot.starter.version>
@@ -159,7 +159,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <id>enforce-versions</id>
