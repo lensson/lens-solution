@@ -92,8 +92,9 @@
         <module>lens-blog</module>
 
         <!-- wechat module-->
+        <!--
         <module>lens-wx</module>
-
+        -->
 
     </modules>
 
