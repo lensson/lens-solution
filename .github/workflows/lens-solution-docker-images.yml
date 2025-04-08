@@ -71,19 +71,20 @@ jobs:
           mvn dockerfile:build
           cd ..
           echo '=====完成构建lens-blog镜像群====='
-      - name: Build lens-wx Docker Images
-        run: |
-          echo '=====开始构建lens-wx镜像群====='
-          echo '=====开始构建lens-gzh-backend====='
-          cd lens-wx
-          cd lens-gzh-frontend
-          mvn dockerfile:build
-          cd ..
-          echo '=====开始构建lens-gzh-frontend====='
-          cd lens-gzh-frontend
-          docker build . -t lensson/lens-gzh-frontend:latest
-          cd ..
-          echo '=====完成构建lens-wx镜像群====='
+#
+#      - name: Build lens-wx Docker Images
+#        run: |
+#          echo '=====开始构建lens-wx镜像群====='
+#          echo '=====开始构建lens-gzh-backend====='
+#          cd lens-wx
+#          cd lens-gzh-frontend
+#          mvn dockerfile:build
+#          cd ..
+#          echo '=====开始构建lens-gzh-frontend====='
+#          cd lens-gzh-frontend
+#          docker build . -t lensson/lens-gzh-frontend:latest
+#          cd ..
+#          echo '=====完成构建lens-wx镜像群====='
       # 登录到 dockerhub
       - name: Login to Dockerhub
         uses: docker/login-action@v1
@@ -113,11 +114,11 @@ jobs:
           echo '=====开始上传lens-blog-vue-frontend====='
           docker push lensson/lens-blog-vue-frontend:latest
           echo '=====镜像上传结束====='
-      - name: Push lens-wx Docker Image
-        run: |
-          echo '=====开始上传lens-wx镜像====='
-          echo '=====开始上传lens-gzh-backend====='
-          docker push lensson/lens-gzh-backend:latest
-          echo '=====开始上传lens-gzh-frontend====='
-          docker push lensson/lens-gzh-frontend:latest
-          echo '=====镜像上传结束====='
+#      - name: Push lens-wx Docker Image
+#        run: |
+#          echo '=====开始上传lens-wx镜像====='
+#          echo '=====开始上传lens-gzh-backend====='
+#          docker push lensson/lens-gzh-backend:latest
+#          echo '=====开始上传lens-gzh-frontend====='
+#          docker push lensson/lens-gzh-frontend:latest
+#          echo '=====镜像上传结束====='
