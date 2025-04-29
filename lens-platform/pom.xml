@@ -5,36 +5,148 @@
     <modelVersion>4.0.0</modelVersion>
     <version>0.0.1-SNAPSHOT</version>
 
+    <!--
     <parent>
-        <groupId>com.lens</groupId>
-        <artifactId>lens-solution</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
     </parent>
+    -->
+
     <groupId>com.lens</groupId>
     <artifactId>lens-platform</artifactId>
     <packaging>pom</packaging>
+    <name>lens-platform</name>
+    <description>Lens Platform Root</description>
+
 
     <modules>
+
+        <module>lens-platform-api</module>
+        <!--
         <module>lens-admin-api</module>
+        -->
+        <!--
         <module>lens-admin-app</module>
+        -->
     </modules>
 
     <properties>
         <lens-common.version>0.0.1-SNAPSHOT</lens-common.version>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <swagger.version>2.6.1</swagger.version>
+        <swagger.ui.version>2.6.1</swagger.ui.version>
+        <swagger.starter.version>3.0.0</swagger.starter.version>
+        <servlet.api.version>3.0-alpha-1</servlet.api.version>
+        <net.sf.json.lib.version>2.4</net.sf.json.lib.version>
+        <alibaba.fastjson.version>1.2.31</alibaba.fastjson.version>
+        <jackson.mapper.asl.version>1.9.13</jackson.mapper.asl.version>
+        <javax.mail.version>1.4</javax.mail.version>
+        <aliyun.java.sdk.dysmsapi.version>1.0.0</aliyun.java.sdk.dysmsapi.version>
+        <aliyun.java.sdk.core.version>3.2.5</aliyun.java.sdk.core.version>
+        <mybatis.plus.boot.starter.version>3.1.2</mybatis.plus.boot.starter.version>
+        <jjwt.version>0.7.0</jjwt.version>
+        <druid.version>1.1.8</druid.version>
+        <google.code.gson.version>2.7</google.code.gson.version>
+        <lombok.version>1.18.28</lombok.version>
+        <hutool.version>4.6.4</hutool.version>
+        <log4j.version>1.2.17</log4j.version>
+        <eureka.version>1.2.3.RELEASE</eureka.version>
+        <startFeign.version>1.4.7.RELEASE</startFeign.version>
+        <qiniu.version>[7.2.0, 7.2.99]</qiniu.version>
+        <springBootAdmin.version>2.2.1</springBootAdmin.version>
+        <JustAuth.version>1.15.1</JustAuth.version>
+        <dyuproject.version>1.1.5</dyuproject.version>
+        <flexmark.version>0.62.2</flexmark.version>
+        <ip2region.version>1.7.2</ip2region.version>
+        <oshi.version>3.9.1</oshi.version>
+        <freemarker.version>2.3.28</freemarker.version>
+        <jaxb.version>2.3.0</jaxb.version>
+        <minio.version>7.1.4</minio.version>
+        <spring.mock.version>2.0.8</spring.mock.version>
+
+        <docker.image.prefix>lensson</docker.image.prefix>
+        <dockerfile.maven.version>1.4.10</dockerfile.maven.version>
+
+        <!-- spring boot & cloud & alibaba version -->
+        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.lens</groupId>
+                <artifactId>lens-common-core</artifactId>
+                <version>${lens-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
-
-
-
         <dependency>
-            <groupId>com.lens</groupId>
-            <artifactId>lens-common-core</artifactId>
-            <version>${lens-common.version}</version>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <optional>true</optional>
+        </dependency>
 
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.lens</groupId>
     <artifactId>lens-admin-app</artifactId>
-    <name>lens-admin-app</name>
+    <name>lens-platform/lens-admin-app</name>
     <description>Admin APP</description>
 
     <properties>

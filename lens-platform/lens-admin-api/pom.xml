@@ -11,7 +11,7 @@
 
     <groupId>com.lens</groupId>
     <artifactId>lens-admin-api</artifactId>
-    <name>lens-admin-api</name>
+    <name>lens-platform/lens-admin-api</name>
     <description>Admin API</description>
 
     <properties>
