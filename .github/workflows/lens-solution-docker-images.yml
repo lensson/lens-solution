@@ -30,6 +30,24 @@ jobs:
           mvn install -DskipTests=true && mvn package -DskipTests=true
 
 
+      # Build Lens Infra images
+      - name: Build lens-infra Docker Images
+        run: |
+          echo '=====开始构建lens-infra镜像群====='
+          cd lens-infra
+          
+          echo '=====开始构建 lens-sso-gateway 镜像====='
+          cd lens-sso-gateway
+          mvn install dockerfile:build
+          cd ..
+          
+          echo '=====开始构建 lens-sso-auth 镜像====='
+          cd lens-sso-auth
+          mvn install dockerfile:build
+          cd ..
+          echo '=====完成构建lens-infra镜像群====='
+          cd ..
+
       - name: Build lens-blog Docker Images
         run: |
           cd lens-blog
@@ -71,6 +89,7 @@ jobs:
           mvn dockerfile:build
           cd ..
           echo '=====完成构建lens-blog镜像群====='
+          cd ..
 #
 #      - name: Build lens-wx Docker Images
 #        run: |
@@ -92,8 +111,16 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Push lens-blog Docker Image
+      - name: Push lens-infra Docker Image
         run: |
+          echo '=====开始上传lens-infra镜像====='
+          echo '=====开始上传lens-sso-gateway====='
+          docker push lensson/lens-sso-gateway:latest
+          echo '=====开始上传lens-sso-auth====='
+          docker push lensson/lens-sso-auth:latest
+
+      - name: Push lens-blog Docker Image
+        run: |         
           echo '=====开始上传lens-blog镜像====='
           echo '=====开始上传lens-blog-admin-backend====='
           docker push lensson/lens-blog-admin-backend:latest

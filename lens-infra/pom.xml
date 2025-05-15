@@ -10,9 +10,15 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <modules>
+        <!--
         <module>lens-nsgateway</module>
         <module>lens-gateway</module>
         <module>lens-auth</module>
+        -->
+
+
+        <module>lens-sso-gateway</module>
+        <module>lens-sso-auth</module>
     </modules>
 
     <properties>
